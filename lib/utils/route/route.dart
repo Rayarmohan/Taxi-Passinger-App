@@ -22,15 +22,12 @@ appRoutes() => [
        GetPage(name: AppRoute.profile, page: () => const ProfileScreen()),
        GetPage(name: AppRoute.coupon, page: () => const CouponScreen()),
   GetPage(name: AppRoute.addcard, page: () => AddCardPage()),
-<<<<<<< HEAD
   GetPage(name: AppRoute.paycash, page: () => const PayCash()),
   GetPage(name: AppRoute.rideconfirm, page: () => const RideConfirmationPage()),
   GetPage(name: AppRoute.driverdetails, page: () => const DriverDetailsScreen()),
-=======
   GetPage(name: AppRoute.paycash, page: () => PayCash()),
   GetPage(name: AppRoute.rideconfirm, page: () => RideConfirmationPage()),
   GetPage(name: AppRoute.ridefounded, page: () => RideFounded()),
   GetPage(name: AppRoute.ridefounded2, page: () => RideFounded2()),
   GetPage(name: AppRoute.chat, page: () => ChatPage()),
->>>>>>> f3edd91f78246d4c2ff479a9e7ad9962c8a735b7
     ];
