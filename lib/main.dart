@@ -30,8 +30,8 @@ class MyApp extends StatelessWidget {
         theme: AppTheme.appTheme,
         debugShowCheckedModeBanner: false,
         title: 'Taxi_passenger_app',
-        // initialRoute: AppRoute.onboard,
-        home: CancelRideScreen(),
+        initialRoute: AppRoute.onboard,
+        // home: CancelRideScreen(),
         getPages: appRoutes(),
       ),
     );
