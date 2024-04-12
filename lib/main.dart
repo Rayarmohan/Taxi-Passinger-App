@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+
 import 'package:taxi_passenger_app/utils/core/theme/app_theme.dart';
 
 import 'utils/route/route.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Taxi_passenger_app',
         initialRoute: AppRoute.onboard,
+        
         getPages: appRoutes(),
       ),
     );
