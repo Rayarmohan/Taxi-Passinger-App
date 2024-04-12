@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:taxi_passenger_app/features/Ride/search_ride.dart';
+import 'package:taxi_passenger_app/features/booking_pages/booking_tab.dart';
 
 import 'package:taxi_passenger_app/utils/core/theme/app_theme.dart';
 
@@ -26,7 +28,8 @@ class MyApp extends StatelessWidget {
         theme: AppTheme.appTheme,
         debugShowCheckedModeBanner: false,
         title: 'Taxi_passenger_app',
-        initialRoute: AppRoute.onboard,
+        // initialRoute: AppRoute.onboard,
+        home: BookingComplete(),
         getPages: appRoutes(),
       ),
     );
