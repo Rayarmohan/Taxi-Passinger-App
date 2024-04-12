@@ -1,7 +1,12 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:taxi_passenger_app/features/driver_arrived/driver_arrived_screen.dart';
+import 'package:taxi_passenger_app/features/navigateyour_ride/naviagate_your_ride_screen.dart';
+import 'package:taxi_passenger_app/features/navigation/navigation_screen.dart';
+import 'package:taxi_passenger_app/features/rate_driver/rate_driver_screen.dart';
 import 'package:taxi_passenger_app/features/verify_code/verify_code_screen.dart';
 
 import 'package:taxi_passenger_app/utils/core/theme/app_theme.dart';
@@ -28,8 +33,6 @@ class MyApp extends StatelessWidget {
         theme: AppTheme.appTheme,
         debugShowCheckedModeBanner: false,
         title: 'Taxi_passenger_app',
-        // initialRoute: AppRoute.onboard,
-        home: VerifyCodeScreen(),
         getPages: appRoutes(),
       ),
     );

@@ -3,13 +3,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:taxi_passenger_app/features/driver_arrived/widgets/custom_app_driver.dart';
 import 'package:taxi_passenger_app/utils/color/app_colors.dart';
-import 'package:taxi_passenger_app/widgets/custom_button.dart';
 import 'package:taxi_passenger_app/widgets/custom_images.dart';
-
-import '../../widgets/custom_app_bar.dart';
 
 class DriverArrived extends StatelessWidget {
   const DriverArrived({super.key});
@@ -64,43 +60,49 @@ class DriverArrived extends StatelessWidget {
               boxFit: BoxFit.cover,
             ),
           ),
-          Align(
-            alignment: Alignment.topRight,
-            child: Padding(
-              padding: const EdgeInsets.only(top: 110, right: 20),
-              child: CustomPngImage(
-                imageName: "assets/images/warning_icon.png",
-                height: 40,
-                width: 40,
-                boxFit: BoxFit.contain,
-              ),
+          Positioned(
+            top: MediaQuery.of(context).size.height *
+                0.13, // Adjust the value as needed
+            right: 20,
+            child: CustomPngImage(
+              imageName: "assets/images/warning_icon.png",
+              height: 40,
+              width: 40,
+              boxFit: BoxFit.contain,
             ),
           ),
-          Align(
-            alignment: Alignment.topRight,
-            child: Padding(
-              padding: const EdgeInsets.only(top: 520, right: 20),
-              child: CustomPngImage(
-                imageName: "assets/images/currentlocayion.png",
-                height: 50,
-                width: 50,
-                boxFit: BoxFit.contain,
-              ),
+         Positioned(
+            top: MediaQuery.of(context).size.height *
+                0.57, // Adjust the value as needed
+            right: 20,
+            
+
+            child: CustomPngImage(
+              imageName: "assets/images/currentlocayion.png",
+              height: 50,
+              width: 50,
+              boxFit: BoxFit.contain,
             ),
           ),
-          const Align(
-            alignment: Alignment.center,
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 150, right: 10.0),
-                  child: CustomPngImage(
-                    height: 230,
-                    width: 230,
-                    imageName: 'assets/images/carpath.png',
+          Positioned(
+            top: MediaQuery.of(context).size.height * 0.5 -
+                200, // Adjust the value as needed
+            left: MediaQuery.of(context).size.width * 0.5 -
+                115, // Adjust the value as needed
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 10.0),
+                    child: CustomPngImage(
+                      height: 230,
+                      width: 230,
+                      imageName: 'assets/images/carpath.png',
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
           Align(
