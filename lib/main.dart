@@ -11,6 +11,7 @@ import 'package:taxi_passenger_app/features/rate_driver/rate_driver_screen.dart'
 import 'package:taxi_passenger_app/features/sos/sos_screen.dart';
 import 'package:taxi_passenger_app/features/verify_code/verify_code_screen.dart';
 
+
 import 'package:taxi_passenger_app/utils/core/theme/app_theme.dart';
 
 import 'utils/route/route.dart';
