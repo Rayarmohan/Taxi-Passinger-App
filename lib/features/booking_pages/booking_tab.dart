@@ -18,8 +18,11 @@ class BookingComplete extends StatelessWidget {
             title: Text('Bookings',
                 style: Theme.of(context)
                     .textTheme
-                    .headlineMedium!
-                    .copyWith(height: 1.7, color: AppColors.primeryColor)),
+                    .titleLarge!
+                    .copyWith(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w400,
+                      height: 1.7, color: AppColors.primeryColor)),
             leading: const Padding(
               padding: EdgeInsets.all(8.0),
               child: CustomPngImage(

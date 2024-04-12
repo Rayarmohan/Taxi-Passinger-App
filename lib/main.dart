@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:taxi_passenger_app/features/Ride/search_ride.dart';
 import 'package:taxi_passenger_app/features/booking_pages/booking_tab.dart';
+import 'package:taxi_passenger_app/features/booking_pages/pre_booking.dart';
+import 'package:taxi_passenger_app/features/cancel_pages/cancel_ride.dart';
 
 import 'package:taxi_passenger_app/utils/core/theme/app_theme.dart';
 
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Taxi_passenger_app',
         // initialRoute: AppRoute.onboard,
-        home: BookingComplete(),
+        home: CancelRideScreen(),
         getPages: appRoutes(),
       ),
     );
