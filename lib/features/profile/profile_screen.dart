@@ -45,7 +45,7 @@ class ProfileScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               ProfileUpdate(
-                  imagePath: 'assets/images/Propic.png',
+                  imagePath: 'assets/images/propic.png',
                   onUpdate: () {                  
                     Get.to(ProfileEdit());                                       
                   }),

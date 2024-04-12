@@ -28,6 +28,7 @@ class NotificationScreen extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Container(
               width: 58 ,
+              height: 28,
               color: AppColors.primeryColor,
               child: Center(
                 child: Text(
@@ -83,7 +84,7 @@ class NotificationScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Yesterday",
+                  Text("YESTERDAY",
                       style: Theme.of(context)
                           .textTheme
                           .labelLarge!
