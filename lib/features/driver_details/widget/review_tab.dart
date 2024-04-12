@@ -107,7 +107,7 @@ class ReviewTab extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               Expanded(
@@ -155,9 +155,9 @@ class ReviewTab extends StatelessWidget {
             direction: Axis.horizontal,
             allowHalfRating: true,
             itemCount: 5,
-            itemPadding: EdgeInsets.symmetric(
+            itemPadding: const EdgeInsets.symmetric(
                 horizontal: 2.0), // Reduce space between stars
-            itemBuilder: (context, _) => Icon(
+            itemBuilder: (context, _) => const Icon(
               Icons.star,
               color: AppColors.primeryColor,
             ),
@@ -192,7 +192,7 @@ class ReviewTab extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               Expanded(
@@ -240,9 +240,9 @@ class ReviewTab extends StatelessWidget {
             direction: Axis.horizontal,
             allowHalfRating: true,
             itemCount: 5,
-            itemPadding: EdgeInsets.symmetric(
+            itemPadding: const EdgeInsets.symmetric(
                 horizontal: 2.0), // Reduce space between stars
-            itemBuilder: (context, _) => Icon(
+            itemBuilder: (context, _) => const Icon(
               Icons.star,
               color: AppColors.primeryColor,
             ),
