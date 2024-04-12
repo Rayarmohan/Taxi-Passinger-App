@@ -9,4 +9,8 @@ class AppRoute {
   static String paycash = '/PayCash';
   static String rideconfirm = '/RideConfirm';
   static String driverdetails = '/DriverDetails';
+  static String ridefounded = '/RideFounded';
+  static String ridefounded2 = '/RideFounded2';
+  static String chat = '/ChatPage';
+
 }
