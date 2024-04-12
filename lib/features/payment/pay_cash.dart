@@ -116,13 +116,13 @@ class PayCash extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(top: 25.0), // Removed const
+                        padding: const EdgeInsets.only(top: 25.0, ), // Removed const
                         child: Container(
                           color: AppColors.primeryColor,
-                          width: 70,
+                          width: 73,
                           height: 29,
                           child: Text(
-                            '10 min trip',
+                            ' 10 min trip ',
                             style: Theme.of(context)
                                 .textTheme
                                 .titleSmall!
