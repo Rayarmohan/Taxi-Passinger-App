@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:taxi_passenger_app/features/ride/ride_founded.dart';
 import '../../utils/color/app_colors.dart';
 import '../../widgets/custom_app_bar.dart';
 import '../../widgets/custom_button.dart';
@@ -84,12 +87,18 @@ class RideConfirmationPage extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    Text(
-                      "Track Order",
-                      style: Theme.of(context)
-                          .textTheme
-                          .bodyMedium!
-                          .copyWith(color: AppColors.primeryColor),
+                    InkWell(
+                      onTap: (){
+                        Get.to(() => RideFounded());
+                      },
+                      child: Text(
+                        "Track Order",
+
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium!
+                            .copyWith(color: AppColors.primeryColor),
+                      ),
                     )
                   ],
                 ),
