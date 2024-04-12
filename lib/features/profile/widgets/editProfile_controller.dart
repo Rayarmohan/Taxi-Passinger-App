@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 class EditprofileCon extends GetxController {
    var dropdownValue = '+91'.obs;
-  var citydropdownValue = 'Nairobi,Africa'.obs;
+  var gender = 'Male'.obs;
 
   TextEditingController editController = TextEditingController();
   TextEditingController nameController = TextEditingController();
@@ -18,8 +18,8 @@ class EditprofileCon extends GetxController {
     update();
   }
 
-   void setCityDropdownValue(String value) {
-    citydropdownValue.value = value;
+   void setGender(String value) {
+    gender.value = value;
     update();
   }
 

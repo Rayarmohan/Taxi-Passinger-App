@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:taxi_passenger_app/features/coupon/coupon_screen.dart';
 import 'package:taxi_passenger_app/features/login/login_screen.dart';
 import 'package:taxi_passenger_app/features/notification/notification_screen.dart';
 import 'package:taxi_passenger_app/features/on_board/on_board_screen.dart';
@@ -12,4 +13,5 @@ appRoutes() => [
       GetPage(name: AppRoute.otpscreen, page: () => const OTPScreen()),
       GetPage(name: AppRoute.notification, page: () => const NotificationScreen()),
        GetPage(name: AppRoute.profile, page: () => const ProfileScreen()),
+       GetPage(name: AppRoute.coupon, page: () => const CouponScreen()),
     ];

@@ -7,6 +7,7 @@ import 'package:taxi_passenger_app/features/profile/widgets/editProfile_controll
 import 'package:taxi_passenger_app/features/profile/widgets/update_photo.dart';
 import 'package:taxi_passenger_app/utils/color/app_colors.dart';
 import 'package:taxi_passenger_app/widgets/custom_app_bar.dart';
+import 'package:taxi_passenger_app/widgets/custom_button.dart';
 import 'package:taxi_passenger_app/widgets/custom_images.dart';
 import 'package:taxi_passenger_app/widgets/custom_text_field.dart';
 
@@ -156,7 +157,7 @@ class ProfileEdit extends StatelessWidget {
                           ),
                     SizedBox(
                       height: 5.h,
-                    ),Text("City You Drive In",
+                    ),Text("Gender",
                         style: Theme.of(context)
                             .textTheme
                             .bodyMedium!
@@ -172,12 +173,12 @@ class ProfileEdit extends StatelessWidget {
                                 Border.all(width: 1, color: AppColors.grey)),
                         child: DropdownButtonHideUnderline(
                           child: DropdownButton<String>(
-                            value: controller.citydropdownValue.value,
+                            value: controller.gender.value,
                             onChanged: (String? newValue) {
-                              controller.setCityDropdownValue(newValue!);
+                              controller.setGender(newValue!);
                             },
                             items:
-                                <String>['Nairobi,Africa', 'Cape Town, Africa'].map((String value) {
+                                <String>['Male', 'Female'].map((String value) {
                               return DropdownMenuItem<String>(
                                 alignment: AlignmentDirectional.center,
                                 value: value,
@@ -198,44 +199,7 @@ class ProfileEdit extends StatelessWidget {
                       ),
                     ),
                       
-                      SizedBox(height: 10,),
-                      Text("Documents",
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.normal,
-                        color: AppColors.grey
-                      )),
-                      SizedBox(height: 10,),
-                       Container(
-                        height: 50,
-                        width: 500,
-                        padding: const EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            width: 1,
-                            color: AppColors.grey,
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(
-                              "Update Documents Details",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(
-                                    height: 1.7,
-                                    color: AppColors.black,
-                                  ),
-                            ),
-                            const Icon(
-                              Icons.arrow_forward_ios,
-                              color: Colors.black,
-                            ),
-                          ],
-                        ),
-                      ),
+                  
                       SizedBox(height: 10,),
                       Text("Date Of Birth",
                       style: TextStyle(
@@ -249,6 +213,19 @@ class ProfileEdit extends StatelessWidget {
                             controller: controller.dobController,
                             hint: 'Enter DOB',
                           ),
+                          SizedBox(height: 60,),
+                          CustomButton(
+              height: 44,
+              width: 1.sw,
+              onPressed: () {},
+              color: AppColors.primeryColor,
+              child: Text("Update",
+              style: Theme.of(context)
+                            .textTheme
+                            .bodyMedium!
+                            .copyWith(fontSize: 15, color: AppColors.white),),
+            ),
+
                 ],
               )
             ],

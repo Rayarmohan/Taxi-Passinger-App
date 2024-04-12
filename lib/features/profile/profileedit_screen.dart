@@ -220,12 +220,12 @@ class ProfileEditUser extends StatelessWidget {
                                 Border.all(width: 1, color: AppColors.primeryColor)),
                         child: DropdownButtonHideUnderline(
                           child: DropdownButton<String>(
-                            value: controller.citydropdownValue.value,
+                            value: controller.gender.value,
                             onChanged: (String? newValue) {
-                              controller.setCityDropdownValue(newValue!);
+                              controller.setGender(newValue!);
                             },
                             items:
-                                <String>['Nairobi,Africa', 'Cape Town, Africa'].map((String value) {
+                                <String>['Male', 'Female'].map((String value) {
                               return DropdownMenuItem<String>(
                                 alignment: AlignmentDirectional.center,
                                 value: value,

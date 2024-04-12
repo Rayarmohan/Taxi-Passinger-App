@@ -4,4 +4,5 @@ class AppRoute {
   static String otpscreen = '/OtpScreen';
   static String notification = '/NotificationScreen';
   static String profile = '/ProfileScreen';
+  static String coupon = '/CooponScreen';
 }
