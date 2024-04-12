@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:taxi_passenger_app/utils/color/app_colors.dart';
 import 'package:taxi_passenger_app/widgets/custom_app_bar.dart';
-import 'package:taxi_passenger_app/widgets/custom_button.dart';
 import 'package:taxi_passenger_app/widgets/custom_images.dart';
 
 class VerifyCodeScreen extends StatelessWidget {
@@ -59,7 +58,7 @@ class VerifyCodeScreen extends StatelessWidget {
               Center(
                 child: TextButton(
                   onPressed: () {},
-                  style: ButtonStyle(alignment: Alignment.center),
+                  style: const ButtonStyle(alignment: Alignment.center),
                   child: RichText(
                     textAlign: TextAlign.center,
                     text: TextSpan(
@@ -86,15 +85,6 @@ class VerifyCodeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              // const SizedBox(height: 30),
-              // CustomButton(
-              //   height: 44,
-              //   width: 1.sw,
-              //   onPressed: () {},
-              //   text: "Sign In",
-              //   color: AppColors.primeryColor,
-              //   textColor: AppColors.white,
-              // )
             ],
           ),
         ),
