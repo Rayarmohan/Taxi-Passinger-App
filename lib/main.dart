@@ -3,14 +3,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:taxi_passenger_app/features/address_selection/address_selection.dart';
+import 'package:taxi_passenger_app/features/destination/destination_screen.dart';
 import 'package:taxi_passenger_app/features/driver_arrived/driver_arrived_screen.dart';
+import 'package:taxi_passenger_app/features/home/car_image/car_image_screen.dart';
 import 'package:taxi_passenger_app/features/manage_address/manage_address_screen.dart';
 import 'package:taxi_passenger_app/features/navigateyour_ride/naviagate_your_ride_screen.dart';
 import 'package:taxi_passenger_app/features/navigation/navigation_screen.dart';
 import 'package:taxi_passenger_app/features/rate_driver/rate_driver_screen.dart';
 import 'package:taxi_passenger_app/features/sos/sos_screen.dart';
 import 'package:taxi_passenger_app/features/verify_code/verify_code_screen.dart';
-
 
 import 'package:taxi_passenger_app/utils/core/theme/app_theme.dart';
 
@@ -33,11 +35,12 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       useInheritedMediaQuery: true,
       builder: (context, child) => GetMaterialApp(
-        theme: AppTheme.appTheme,
-        debugShowCheckedModeBanner: false,
-        title: 'Taxi_passenger_app',
-        getPages: appRoutes(),
-      ),
+          theme: AppTheme.appTheme,
+          debugShowCheckedModeBanner: false,
+          title: 'Taxi_passenger_app',
+          home: const DestinationScreen()
+          // getPages: appRoutes(),
+          ),
     );
   }
 }
