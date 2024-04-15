@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:taxi_passenger_app/features/home/widgets/custom_app_bar.dart';
 import 'package:taxi_passenger_app/utils/color/app_colors.dart';
+import 'package:taxi_passenger_app/utils/route/route_name.dart';
 import 'package:taxi_passenger_app/widgets/custom_button.dart';
 import 'package:taxi_passenger_app/widgets/custom_images.dart';
 
@@ -38,7 +39,7 @@ class ArrivedScreen extends StatelessWidget {
             child: Column(
               children: [
                 CustomPngImage(
-                  imageName: "assets/images/call_icon.png",
+                  imageName: "assets/images/call_icon1.png",
                   height: 40,
                   width: 40,
                   boxFit: BoxFit.contain,
@@ -54,7 +55,7 @@ class ArrivedScreen extends StatelessWidget {
             width: double.infinity,
             height: double.infinity,
             child: CustomPngImage(
-              imageName: 'assets/images/map.png',
+              imageName: 'assets/images/map1.png',
               boxFit: BoxFit.cover,
             ),
           ),
@@ -63,7 +64,7 @@ class ArrivedScreen extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.only(top: 80, right: 20),
               child: CustomPngImage(
-                imageName: "assets/images/warning_icon.png",
+                imageName: "assets/images/warning_icon1.png",
                 height: 40,
                 width: 40,
                 boxFit: BoxFit.contain,
@@ -74,33 +75,40 @@ class ArrivedScreen extends StatelessWidget {
             alignment: Alignment.center,
             child: Column(
               children: [
-                Padding(
-                  padding: EdgeInsets.only(top: 120, right: 150.0),
-                  child: CustomPngImage(
-                    height: 30,
-                    width: 15,
-                    imageName: 'assets/images/car_icon.png',
-                    boxFit: BoxFit.cover,
-                  ),
+                CustomPngImage(
+                  height: 500,
+                  width: 200,
+                  imageName: 'assets/images/navigateride.png',
+                  boxFit: BoxFit.cover,
                 ),
-                Padding(
-                  padding: EdgeInsets.only(right: 65.0),
-                  child: CustomPngImage(
-                    height: 200,
-                    width: 85,
-                    imageName: 'assets/images/mappath.png',
-                    boxFit: BoxFit.cover,
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(bottom: 60, right: 120.0),
-                  child: CustomPngImage(
-                    height: 30,
-                    width: 15,
-                    imageName: 'assets/images/location_point.png',
-                    boxFit: BoxFit.cover,
-                  ),
-                ),
+
+                // Padding(
+                //   padding: EdgeInsets.only(top: 120, right: 100),
+                //   child: CustomPngImage(
+                //     height: 30,
+                //     width: 15,
+                //     imageName: 'assets/images/car_icon.png',
+                //     boxFit: BoxFit.cover,
+                //   ),
+                // ),
+                // Padding(
+                //   padding: EdgeInsets.only(right: 65.0),
+                //   child: CustomPngImage(
+                //     height: 300,
+                //     width: 130,
+                //     imageName: 'assets/images/mappath1.png',
+                //     boxFit: BoxFit.cover,
+                //   ),
+                // ),
+                // Padding(
+                //   padding: EdgeInsets.only(bottom: 60, right: 120.0),
+                //   child: CustomPngImage(
+                //     height: 30,
+                //     width: 15,
+                //     imageName: 'assets/images/location_point.png',
+                //     boxFit: BoxFit.cover,
+                //   ),
+                // ),
               ],
             ),
           ),
@@ -185,7 +193,9 @@ Widget _PayRequest(BuildContext context) {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 5.0, right: 5.0),
                   child: CustomButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed(AppRoute.paymentMethode);
+                    },
                     child: Text(
                       'Pay Cash Rs. 120.54',
                       style: Theme.of(context)

@@ -1,9 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import 'package:taxi_passenger_app/features/rate_driver/rate_driver_screen.dart';
+
 import 'package:taxi_passenger_app/features/ride/ride_confirmation.dart';
 
 import '../../utils/color/app_colors.dart';
@@ -20,12 +20,10 @@ class PayCash extends StatelessWidget {
       appBar: CustomAppBar(
         title: Text(
           "Pay Cash",
-          style: Theme.of(context)
-              .textTheme
-              .headlineLarge!
-              .copyWith(height: 1.7, color: AppColors.primeryColor, fontSize: 24),
+          style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+              height: 1.7, color: AppColors.primeryColor, fontSize: 24),
         ),
-        leading: Padding(
+        leading: const Padding(
           // Removed const
           padding: EdgeInsets.all(8.0),
           child: CustomPngImage(
@@ -37,16 +35,16 @@ class PayCash extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(20.0), // Removed const
+          padding: const EdgeInsets.all(20.0), // Removed const
           child: Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(
+                const SizedBox(
                   // Removed const
                   height: 80,
                 ),
-                CircleAvatar(
+                const CircleAvatar(
                   // Removed const
                   backgroundColor: AppColors.primeryColor,
                   radius: 60,
@@ -61,12 +59,12 @@ class PayCash extends StatelessWidget {
                         .textTheme
                         .headlineSmall!
                         .copyWith(height: 1.7, color: AppColors.primeryColor)),
-                SizedBox(
+                const SizedBox(
                   // Removed const
                   height: 20,
                 ),
                 Padding(
-                  padding: EdgeInsets.all(8.0), // Removed const
+                  padding: const EdgeInsets.all(8.0), // Removed const
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
@@ -74,17 +72,18 @@ class PayCash extends StatelessWidget {
                         // Removed const
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Icon(Icons.radio_button_checked, size: 20.0),
+                          const Icon(Icons.radio_button_checked, size: 20.0),
                           SizedBox(
                             height: 40,
                             child: Image.asset('assets/images/dottedline.png'),
                           ),
-                          Icon(Icons.location_on, size: 18.0),
+                          const Icon(Icons.location_on, size: 18.0),
                         ],
                       ),
                       Expanded(
                         child: Padding(
-                          padding: EdgeInsets.only(left: 8.0), // Removed const
+                          padding:
+                              const EdgeInsets.only(left: 8.0), // Removed const
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
@@ -93,14 +92,19 @@ class PayCash extends StatelessWidget {
                                 style: Theme.of(context)
                                     .textTheme
                                     .titleMedium!
-                                    .copyWith(height: 1.7, color: AppColors.primeryColor),
+                                    .copyWith(
+                                        height: 1.7,
+                                        color: AppColors.primeryColor),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 // Removed const
                                 height: 7,
                               ),
-                              Divider(color: Color(0xFF0A2B4C),thickness: 1.0,),
-                              SizedBox(
+                              const Divider(
+                                color: Color(0xFF0A2B4C),
+                                thickness: 1.0,
+                              ),
+                              const SizedBox(
                                 // Removed const
                                 height: 7,
                               ),
@@ -109,14 +113,18 @@ class PayCash extends StatelessWidget {
                                 style: Theme.of(context)
                                     .textTheme
                                     .titleMedium!
-                                    .copyWith(height: 1.7, color: AppColors.primeryColor),
+                                    .copyWith(
+                                        height: 1.7,
+                                        color: AppColors.primeryColor),
                               ),
                             ],
                           ),
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 25.0, ), // Removed const
+                        padding: const EdgeInsets.only(
+                          top: 25.0,
+                        ), // Removed const
                         child: Container(
                           color: AppColors.primeryColor,
                           width: 73,
@@ -133,7 +141,7 @@ class PayCash extends StatelessWidget {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   // Removed const
                   height: 40,
                 ),
@@ -148,15 +156,16 @@ class PayCash extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Padding(
+                          const Padding(
                             // Removed const
                             padding: EdgeInsets.only(left: 45.0),
                             child: CircleAvatar(
                               radius: 25,
-                              backgroundImage: AssetImage("assets/images/propic.png"),
+                              backgroundImage:
+                                  AssetImage("assets/images/propic.png"),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             // Removed const
                             width: 20,
                           ),
@@ -171,9 +180,9 @@ class PayCash extends StatelessWidget {
                                     .textTheme
                                     .headlineSmall!
                                     .copyWith(
-                                  color: AppColors.white,
-                                  fontSize: 18,
-                                ),
+                                      color: AppColors.white,
+                                      fontSize: 18,
+                                    ),
                               ),
                               Text(
                                 "Cash payment",
@@ -181,9 +190,9 @@ class PayCash extends StatelessWidget {
                                     .textTheme
                                     .displaySmall!
                                     .copyWith(
-                                  color: AppColors.white,
-                                  fontSize: 9,
-                                ),
+                                      color: AppColors.white,
+                                      fontSize: 9,
+                                    ),
                               ),
                             ],
                           ),
@@ -191,7 +200,7 @@ class PayCash extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Positioned(
+                  const Positioned(
                     // Removed const
                     left: -20,
                     top: 20,
@@ -199,7 +208,7 @@ class PayCash extends StatelessWidget {
                       backgroundColor: AppColors.white,
                     ),
                   ),
-                  Positioned(
+                  const Positioned(
                     // Removed const
                     right: -20,
                     top: 20,
@@ -208,7 +217,7 @@ class PayCash extends StatelessWidget {
                     ),
                   )
                 ]),
-                SizedBox(
+                const SizedBox(
                   // Removed const
                   height: 15,
                 ),
@@ -220,34 +229,42 @@ class PayCash extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(left: 10.0), // Removed const
+                        padding:
+                            const EdgeInsets.only(left: 10.0), // Removed const
                         child: Text(
                           "Total Amount",
                           style: Theme.of(context)
                               .textTheme
                               .displaySmall!
-                              .copyWith(height: 1.7, color: AppColors.white, fontSize: 14),
+                              .copyWith(
+                                  height: 1.7,
+                                  color: AppColors.white,
+                                  fontSize: 14),
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(right: 10.0), // Removed const
+                        padding:
+                            const EdgeInsets.only(right: 10.0), // Removed const
                         child: Text(
                           "Rs 120.5",
                           style: Theme.of(context)
                               .textTheme
                               .displaySmall!
-                              .copyWith(height: 1.7, color: AppColors.white, fontSize: 14),
+                              .copyWith(
+                                  height: 1.7,
+                                  color: AppColors.white,
+                                  fontSize: 14),
                         ),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(height: 60), // Removed const
+                const SizedBox(height: 60), // Removed const
                 CustomButton(
                   height: 44,
                   width: 1.sw,
                   onPressed: () {
-                    Get.to(() => RideConfirmationPage());
+                    Get.to(() => RateDriverScreen());
                   },
                   text: ("Cash Paid"),
                   textColor: Colors.white,

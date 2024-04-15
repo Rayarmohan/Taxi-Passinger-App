@@ -71,13 +71,13 @@ class PrebookingComplete extends StatelessWidget {
                               onPressed: () {
                                 // Handle button 1 press
                               },
-                              child: Text('Cancel',
-
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(color: AppColors.white),
-                            ),
+                              child: Text(
+                                'Cancel',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .copyWith(color: AppColors.white),
+                              ),
                             ),
                           ),
                           SizedBox(
@@ -87,7 +87,6 @@ class PrebookingComplete extends StatelessWidget {
                               onPressed: () {
                                 // Handle button 2 press
                               },
-                              child: Text('Track Ride'),
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.green,
                                 shape: const RoundedRectangleBorder(
@@ -95,6 +94,7 @@ class PrebookingComplete extends StatelessWidget {
                                       BorderRadius.zero, // No border radius
                                 ),
                               ),
+                              child: const Text('Track Ride'),
                             ),
                           ),
                         ],

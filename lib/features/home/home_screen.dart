@@ -1,11 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:taxi_passenger_app/features/home/widgets/custom_app_bar.dart';
 import 'package:taxi_passenger_app/utils/color/app_colors.dart';
+import 'package:taxi_passenger_app/utils/route/route_name.dart';
 import 'package:taxi_passenger_app/widgets/custom_images.dart';
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +39,7 @@ class Home extends StatelessWidget {
             child: Column(
               children: [
                 CustomPngImage(
-                  imageName: "assets/images/call_icon.png",
+                  imageName: "assets/images/call_icon1.png",
                   height: 40,
                   width: 40,
                   boxFit: BoxFit.contain,
@@ -53,7 +55,7 @@ class Home extends StatelessWidget {
             width: double.infinity,
             height: double.infinity,
             child: CustomPngImage(
-              imageName: 'assets/images/map.png',
+              imageName: 'assets/images/map1.png',
               boxFit: BoxFit.cover,
             ),
           ),
@@ -62,7 +64,7 @@ class Home extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.only(top: 80, right: 20),
               child: CustomPngImage(
-                imageName: "assets/images/warning_icon.png",
+                imageName: "assets/images/warning_icon1.png",
                 height: 40,
                 width: 40,
                 boxFit: BoxFit.contain,
@@ -76,7 +78,7 @@ class Home extends StatelessWidget {
               child: CustomPngImage(
                 height: 50,
                 width: 50,
-                imageName: 'assets/images/location.png',
+                imageName: 'assets/images/location1.png',
                 boxFit: BoxFit.cover,
               ),
             ),
@@ -106,92 +108,97 @@ Widget _listview() {
               padding: const EdgeInsets.all(8.0),
               child: Stack(
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(width: 1.0, color: Colors.black)),
-                    height: 130,
-                    width: 180,
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              left: 20.0, top: 10, bottom: 10),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              // ignore: avoid_unnecessary_containers
-                              Container(
-                                child: const CustomPngImage(
-                                  height: 26,
-                                  width: 54.6,
-                                  imageName: 'assets/images/car.png',
+                  GestureDetector(
+                    onTap: () => Get.toNamed(AppRoute.pickUp),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(width: 1.0, color: Colors.black)),
+                      height: 130,
+                      width: 180,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                left: 20.0, top: 10, bottom: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                // ignore: avoid_unnecessary_containers
+                                Container(
+                                  child: const CustomPngImage(
+                                    height: 26,
+                                    width: 54.6,
+                                    imageName: 'assets/images/car.png',
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          
-                          decoration: const BoxDecoration(
-                            border: Border(
-                              top: BorderSide(
-                                  width: 1.0,
-                                  color: Colors.black,
-                                  style: BorderStyle.solid),
+                              ],
                             ),
                           ),
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(top: 5.0, left: 20),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Text("Swift",
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .bodyLarge!
-                                            .copyWith(
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.w500,
-                                                color: AppColors.primeryColor)),
-                                    const SizedBox(
-                                      width: 41,
-                                    ),
-                                    Text("Rs 104.0",
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .bodyLarge!
-                                            .copyWith(
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.w700,
-                                                color: AppColors.primeryColor)),
-                                  ],
-                                ),
+                          Container(
+                            decoration: const BoxDecoration(
+                              border: Border(
+                                top: BorderSide(
+                                    width: 1.0,
+                                    color: Colors.black,
+                                    style: BorderStyle.solid),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 20.0),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    Text("4 Seats Capacity",
-                                        style: Theme.of(context)
-                                            .textTheme
-                                            .bodyMedium!
-                                            .copyWith(
-                                                height: 1.7,
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.w400,
-                                                color: AppColors.primeryColor)),
-                                  ],
+                            ),
+                            child: Column(
+                              children: [
+                                Padding(
+                                  padding:
+                                      const EdgeInsets.only(top: 5.0, left: 20),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text("Swift",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyLarge!
+                                              .copyWith(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.w500,
+                                                  color:
+                                                      AppColors.primeryColor)),
+                                      const SizedBox(
+                                        width: 41,
+                                      ),
+                                      Text("Rs 104.0",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyLarge!
+                                              .copyWith(
+                                                  fontSize: 14,
+                                                  fontWeight: FontWeight.w700,
+                                                  color:
+                                                      AppColors.primeryColor)),
+                                    ],
+                                  ),
                                 ),
-                              )
-                            ],
-                          ),
-                        )
-                      ],
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 20.0),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text("4 Seats Capacity",
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .bodyMedium!
+                                              .copyWith(
+                                                  height: 1.7,
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.w400,
+                                                  color:
+                                                      AppColors.primeryColor)),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   Positioned(
