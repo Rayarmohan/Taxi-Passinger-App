@@ -41,7 +41,7 @@ class NavigationScreen extends StatelessWidget {
             child: Column(
               children: [
                 CustomPngImage(
-                  imageName: "assets/images/call_icon.png",
+                  imageName: "assets/images/call_icon1.png",
                   height: 40,
                   width: 40,
                   boxFit: BoxFit.contain,
@@ -66,7 +66,7 @@ class NavigationScreen extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.only(top: 110, right: 20),
               child: CustomPngImage(
-                imageName: "assets/images/warning_icon.png",
+                imageName: "assets/images/warning_icon1.png",
                 height: 40,
                 width: 40,
                 boxFit: BoxFit.contain,

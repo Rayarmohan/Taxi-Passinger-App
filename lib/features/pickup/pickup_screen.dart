@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:taxi_passenger_app/features/home/widgets/custom_app_bar.dart';
 import 'package:taxi_passenger_app/features/saved_places/widgets/custom_searchbar.dart';
 import 'package:taxi_passenger_app/utils/color/app_colors.dart';
+import 'package:taxi_passenger_app/utils/route/route_name.dart';
 import 'package:taxi_passenger_app/widgets/custom_button.dart';
 import 'package:taxi_passenger_app/widgets/custom_images.dart';
 
@@ -40,12 +41,12 @@ class PickupScreen extends StatelessWidget {
             width: double.infinity,
             height: double.infinity,
             child: CustomPngImage(
-              imageName: 'assets/images/map.png',
+              imageName: 'assets/images/map1.png',
               boxFit: BoxFit.cover,
             ),
           ),
           const Padding(
-            padding: EdgeInsets.fromLTRB(30, 70, 30, 0),
+            padding: EdgeInsets.fromLTRB(30, 90, 30, 0),
             child: CustomSearchBar(
                 hintText: '6391 Elgin, St.Celina, Delawa..',
                 leadingIcon: Icon(
@@ -90,7 +91,9 @@ class PickupScreen extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 5.0, right: 5.0),
                   child: CustomButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed(AppRoute.bookRide);
+                    },
                     child: Text(
                       'Confirm Location',
                       style: Theme.of(context)

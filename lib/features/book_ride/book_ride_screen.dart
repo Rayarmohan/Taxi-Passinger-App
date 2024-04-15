@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:taxi_passenger_app/features/book_ride/transparent_app_bar.dart';
 import 'package:taxi_passenger_app/features/book_ride/vehicle.dart';
 import 'package:taxi_passenger_app/utils/color/app_colors.dart';
+import 'package:taxi_passenger_app/utils/route/route_name.dart';
 import 'package:taxi_passenger_app/widgets/custom_app_bar.dart';
 import 'package:taxi_passenger_app/widgets/custom_button.dart';
 import 'package:taxi_passenger_app/widgets/custom_images.dart';
@@ -22,10 +24,10 @@ class _BookRideState extends State<BookRide> {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/map.png'),
-                fit: BoxFit.contain, // This will cover the entire background
+                image: AssetImage('assets/images/map1.png'),
+                fit: BoxFit.cover, // This will cover the entire background
               ),
             ),
           ),
@@ -42,7 +44,7 @@ class _BookRideState extends State<BookRide> {
                           .copyWith(
                               height: 1.7, color: AppColors.primeryColor)),
                   leading: Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: InkWell(
                       onTap: () {},
                       child: const CustomPngImage(
@@ -63,30 +65,33 @@ class _BookRideState extends State<BookRide> {
                         children: [
                           Container(
                             height: 130,
-                            padding: EdgeInsets.all(15),
+                            padding: const EdgeInsets.all(15),
                             child: Center(
                               child: Padding(
-                                padding: EdgeInsets.all(8.0), // Removed const
+                                padding:
+                                    const EdgeInsets.all(8.0), // Removed const
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[
                                     Column(
                                       // Removed const
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: <Widget>[
-                                        Icon(Icons.radio_button_checked,
+                                        const Icon(Icons.radio_button_checked,
                                             size: 20.0),
                                         SizedBox(
                                           height: 40,
                                           child: Image.asset(
                                               'assets/images/dottedline.png'),
                                         ),
-                                        Icon(Icons.location_on, size: 18.0),
+                                        const Icon(Icons.location_on,
+                                            size: 18.0),
                                       ],
                                     ),
                                     Expanded(
                                       child: Padding(
-                                        padding: EdgeInsets.only(
+                                        padding: const EdgeInsets.only(
                                             left: 8.0), // Removed const
                                         child: Column(
                                           crossAxisAlignment:
@@ -99,8 +104,8 @@ class _BookRideState extends State<BookRide> {
                                                   .titleMedium!
                                                   .copyWith(
                                                       height: 1.7,
-                                                      color:
-                                                          AppColors.primeryColor,
+                                                      color: AppColors
+                                                          .primeryColor,
                                                       fontWeight:
                                                           FontWeight.normal),
                                             ),
@@ -113,7 +118,7 @@ class _BookRideState extends State<BookRide> {
                                                           .width *
                                                       0.57,
                                                   child: const Divider(
-                                                    color: const Color.fromRGBO(
+                                                    color: Color.fromRGBO(
                                                         241, 241, 241, 1),
                                                     thickness: 1.0,
                                                   ),
@@ -130,8 +135,8 @@ class _BookRideState extends State<BookRide> {
                                                           .titleSmall!
                                                           .copyWith(
                                                               height: 1.7,
-                                                              color:
-                                                                  AppColors.white,
+                                                              color: AppColors
+                                                                  .white,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .normal),
@@ -140,7 +145,7 @@ class _BookRideState extends State<BookRide> {
                                                 ),
                                               ],
                                             ),
-                                            SizedBox(
+                                            const SizedBox(
                                               // Removed const
                                               height: 5,
                                             ),
@@ -151,8 +156,8 @@ class _BookRideState extends State<BookRide> {
                                                   .titleMedium!
                                                   .copyWith(
                                                       height: 1.7,
-                                                      color:
-                                                          AppColors.primeryColor,
+                                                      color: AppColors
+                                                          .primeryColor,
                                                       fontWeight:
                                                           FontWeight.normal),
                                             ),
@@ -165,7 +170,7 @@ class _BookRideState extends State<BookRide> {
                               ),
                             ),
                           ),
-                          Divider(
+                          const Divider(
                             color: Color.fromARGB(255, 238, 237, 237),
                           ),
                           Padding(
@@ -176,7 +181,7 @@ class _BookRideState extends State<BookRide> {
                               children: [
                                 Row(
                                   children: [
-                                    Icon(
+                                    const Icon(
                                       Icons.access_time_filled_rounded,
                                       color: AppColors.primeryColor,
                                       size: 35,
@@ -201,7 +206,7 @@ class _BookRideState extends State<BookRide> {
                               ],
                             ),
                           ),
-                          Divider(
+                          const Divider(
                             color: Color.fromARGB(255, 238, 237, 237),
                           ),
                           Padding(
@@ -214,7 +219,7 @@ class _BookRideState extends State<BookRide> {
                                   itemBuilder: (context, index) {
                                     return Row(
                                       children: [
-                                        SizedBox(
+                                        const SizedBox(
                                           width: 40,
                                         ),
                                         VehicleInfo(index: index),
@@ -226,75 +231,84 @@ class _BookRideState extends State<BookRide> {
                           Padding(
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 27, vertical: 5),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    Container(
-                                        height: 40,
-                                        width: 40,
-                                        child: const CustomPngImage(
-                                          imageName: 'assets/images/fileicon.png',
-                                          boxFit: BoxFit.fill,
-                                        )),
-                                    const SizedBox(width: 30),
-                                    Text(
-                                      'Pre-Booke Rides',
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .bodyMedium!
-                                          .copyWith(
-                                            height: 1.7,
-                                            color: AppColors.black,
-                                          ),
-                                    ),
-                                  ],
-                                ),
-                                const Icon(
-                                  Icons.arrow_forward_ios,
-                                  color: AppColors.primeryColor,
-                                ),
-                              ],
+                            child: GestureDetector(
+                              onTap: () {},
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                          height: 40,
+                                          width: 40,
+                                          child: const CustomPngImage(
+                                            imageName:
+                                                'assets/images/fileicon.png',
+                                            boxFit: BoxFit.fill,
+                                          )),
+                                      const SizedBox(width: 30),
+                                      Text(
+                                        'Pre-Booke Rides',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyMedium!
+                                            .copyWith(
+                                              height: 1.7,
+                                              color: AppColors.black,
+                                            ),
+                                      ),
+                                    ],
+                                  ),
+                                  const Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: AppColors.primeryColor,
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                          Divider(
+                          const Divider(
                             color: Color.fromARGB(255, 238, 237, 237),
                           ),
                           Padding(
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 30, vertical: 5),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    Icon(
-                                      Icons.person,
-                                      color: AppColors.primeryColor,
-                                      size: 35,
-                                    ),
-                                    const SizedBox(width: 31),
-                                    Text(
-                                      'Book for self',
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .bodyMedium!
-                                          .copyWith(
-                                            height: 1.7,
-                                            color: AppColors.black,
-                                          ),
-                                    ),
-                                  ],
-                                ),
-                                const Icon(
-                                  Icons.arrow_forward_ios,
-                                  color: AppColors.primeryColor,
-                                ),
-                              ],
+                            child: GestureDetector(
+                              onTap: () => Get.toNamed(AppRoute.bookForSelf),
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      const Icon(
+                                        Icons.person,
+                                        color: AppColors.primeryColor,
+                                        size: 35,
+                                      ),
+                                      const SizedBox(width: 31),
+                                      Text(
+                                        'Book for self',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyMedium!
+                                            .copyWith(
+                                              height: 1.7,
+                                              color: AppColors.black,
+                                            ),
+                                      ),
+                                    ],
+                                  ),
+                                  const Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: AppColors.primeryColor,
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                          Divider(
+                          const Divider(
                             color: Color.fromARGB(255, 238, 237, 237),
                           ),
                           Padding(
@@ -333,7 +347,7 @@ class _BookRideState extends State<BookRide> {
                               ],
                             ),
                           ),
-                          Divider(
+                          const Divider(
                             color: Color.fromARGB(255, 238, 237, 237),
                           ),
                           Padding(
@@ -341,7 +355,9 @@ class _BookRideState extends State<BookRide> {
                             child: CustomButton(
                               height: 50,
                               width: MediaQuery.of(context).size.width * 0.83,
-                              onPressed: () {},
+                              onPressed: () {
+                                Get.toNamed(AppRoute.searchRider);
+                              },
                               text: "Book Ride",
                               textColor: Colors.white,
                               color: AppColors.primeryColor,

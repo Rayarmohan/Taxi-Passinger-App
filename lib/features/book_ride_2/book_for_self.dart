@@ -1,14 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 import 'package:taxi_passenger_app/features/book_ride/transparent_app_bar.dart';
 import 'package:taxi_passenger_app/features/book_ride_2/rider_options.dart';
 import 'package:taxi_passenger_app/utils/color/app_colors.dart';
 import 'package:taxi_passenger_app/widgets/custom_button.dart';
 import 'package:taxi_passenger_app/widgets/custom_images.dart';
 
-class ChooseRider extends StatelessWidget {
-  const ChooseRider({super.key});
+class BookforSelf extends StatelessWidget {
+  const BookforSelf({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,23 +17,27 @@ class ChooseRider extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/map.png'),
-                fit: BoxFit.contain, // This will cover the entire background
+                image: AssetImage('assets/images/map1.png'),
+                fit: BoxFit.cover, // This will cover the entire background
               ),
             ),
           ),
           Positioned(
-            child: Container(
-            height: 199,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('assets/images/mappath.png'),
-                fit: BoxFit.contain, // This will cover the entire background
-              ),
-            ),
-          )),
+              top: 20,
+              left: 0,
+              right: 0,
+              child: Container(
+                height: 500,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/navigateride.png'),
+                    fit:
+                        BoxFit.contain, // This will cover the entire background
+                  ),
+                ),
+              )),
           Column(
             children: [
               Expanded(
@@ -46,9 +51,11 @@ class ChooseRider extends StatelessWidget {
                           .copyWith(
                               height: 1.7, color: AppColors.primeryColor)),
                   leading: Padding(
-                    padding: EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.all(8.0),
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Get.back();
+                      },
                       child: const CustomPngImage(
                         imageName: "assets/images/arrow_back.png",
                         height: 30,
@@ -62,7 +69,7 @@ class ChooseRider extends StatelessWidget {
                   flex: 1,
                   child: Container(
                     width: MediaQuery.of(context).size.width,
-                    padding: EdgeInsets.all(25),
+                    padding: const EdgeInsets.all(25),
                     color: Colors.white,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -74,7 +81,7 @@ class ChooseRider extends StatelessWidget {
                                 .copyWith(
                                     color: AppColors.primeryColor,
                                     fontSize: 20)),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         Text(
@@ -83,18 +90,20 @@ class ChooseRider extends StatelessWidget {
                                 .textTheme
                                 .bodyMedium!
                                 .copyWith(color: AppColors.primeryColor)),
-                        Expanded(child: Container(
-
-                          child: RiderOptions(),
-                          )),
-                          CustomButton(
-                height: 50,
-                width: MediaQuery.of(context).size.width * 0.83,
-                onPressed: () {},
-                text: "Confirm",
-                textColor: Colors.white,
-                color: AppColors.primeryColor,
-              )
+                        Expanded(
+                            child: Container(
+                          child: const RiderOptions(),
+                        )),
+                        CustomButton(
+                          height: 50,
+                          width: MediaQuery.of(context).size.width * 0.83,
+                          onPressed: () {
+                            Get.back();
+                          },
+                          text: "Confirm",
+                          textColor: Colors.white,
+                          color: AppColors.primeryColor,
+                        )
                       ],
                     ),
                   ))

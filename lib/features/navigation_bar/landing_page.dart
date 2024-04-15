@@ -2,14 +2,20 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:taxi_passenger_app/features/navigation_bar/navigation_controller.dart';
+import 'package:taxi_passenger_app/features/add_money/add_to_wallet.dart';
+import 'package:taxi_passenger_app/features/add_money/grid_view.dart';
+import 'package:taxi_passenger_app/features/booking_pages/booking_tab.dart';
+import 'package:taxi_passenger_app/features/home/home_screen.dart';
+import 'package:taxi_passenger_app/features/navigation_bar/landing_page_controller.dart';
+import 'package:taxi_passenger_app/features/notification/notification_screen.dart';
+import 'package:taxi_passenger_app/features/profile/profile_screen.dart';
 import 'package:taxi_passenger_app/utils/color/app_colors.dart';
 
-class BottomNavigation extends StatelessWidget {
+class LandingPage extends StatelessWidget {
   final TextStyle selectedLabelStyle = const TextStyle(
       color: Colors.white, fontWeight: FontWeight.w500, fontSize: 12);
 
-  const BottomNavigation({super.key});
+  const LandingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +28,12 @@ class BottomNavigation extends StatelessWidget {
         body: Obx(
           () => IndexedStack(
             index: bottomNavigationController.tabIndex.value,
-            children: [
-
+            children: const [
+              HomeScreen(),
+              AddMoneytoWallet(),
+              BookingComplete(),
+              NotificationScreen(),
+              ProfileScreen()
             ],
           ),
         ),
@@ -49,7 +59,7 @@ class BottomNavigation extends StatelessWidget {
         ],
         currentIndex: bottomNavigationController.tabIndex.value,
         selectedItemColor: AppColors.primeryColor,
-        unselectedItemColor: Color.fromARGB(255, 211, 209, 209),
+        unselectedItemColor: const Color.fromARGB(255, 211, 209, 209),
         onTap: bottomNavigationController.changeTabIndex,
         type: BottomNavigationBarType.fixed,
         showSelectedLabels: true,
@@ -60,10 +70,12 @@ class BottomNavigation extends StatelessWidget {
 
   BottomNavigationBarItem _buildBottomNavigationBarItem(
       String label, IconData icon, bool isActive, BuildContext context) {
-        TextStyle commonTextStyle = TextStyle(
-      fontSize: 10,
-      fontWeight: FontWeight.w500,
-      color: isActive ? AppColors.primeryColor : Color.fromARGB(255, 211, 209, 209));
+    TextStyle commonTextStyle = TextStyle(
+        fontSize: 10,
+        fontWeight: FontWeight.w500,
+        color: isActive
+            ? AppColors.primeryColor
+            : const Color.fromARGB(255, 211, 209, 209));
     return BottomNavigationBarItem(
       icon: Column(
         mainAxisSize: MainAxisSize.min,
@@ -72,7 +84,7 @@ class BottomNavigation extends StatelessWidget {
             icon,
             size: 20,
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
           Text(
@@ -91,22 +103,22 @@ class BottomNavigation extends StatelessWidget {
             color: AppColors.primeryColor,
             size: 20,
           ),
-          SizedBox(
+          const SizedBox(
             height: 4,
           ),
           Text(label,
-              style: TextStyle(
+              style: const TextStyle(
                   color: AppColors.primeryColor,
                   fontSize: 10,
                   fontWeight: FontWeight.w500)),
-          SizedBox(
+          const SizedBox(
             height: 4,
           ),
           Container(
             width: 50,
             height: 4,
-            margin: EdgeInsets.only(top: 2),
-            decoration: BoxDecoration(
+            margin: const EdgeInsets.only(top: 2),
+            decoration: const BoxDecoration(
               borderRadius: BorderRadius.horizontal(
                   left: Radius.circular(30.0), right: Radius.circular(30.0)),
               color: AppColors.primeryColor,

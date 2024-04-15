@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:taxi_passenger_app/utils/color/app_colors.dart';
+import 'package:taxi_passenger_app/utils/route/route_name.dart';
 import 'package:taxi_passenger_app/widgets/custom_Progress_Indicator.dart';
 import 'package:taxi_passenger_app/widgets/custom_button.dart';
 import 'package:taxi_passenger_app/widgets/custom_images.dart';
@@ -21,9 +23,8 @@ class SearchRide extends StatelessWidget {
           child: Container(
               height: 40,
               width: 40,
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.circle),
+              decoration:
+                  BoxDecoration(color: Colors.white, shape: BoxShape.circle),
               child: Center(
                 child: Padding(
                   padding: const EdgeInsets.only(left: 8.0),
@@ -47,9 +48,8 @@ class SearchRide extends StatelessWidget {
             child: Container(
                 height: 40,
                 width: 40,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    shape: BoxShape.circle),
+                decoration:
+                    BoxDecoration(color: Colors.white, shape: BoxShape.circle),
                 child: Center(
                   child: Icon(
                     size: 20,
@@ -66,7 +66,7 @@ class SearchRide extends StatelessWidget {
             width: double.infinity,
             height: double.infinity,
             child: CustomPngImage(
-              imageName: 'assets/images/map.png',
+              imageName: 'assets/images/map1.png',
               boxFit: BoxFit.cover,
             ),
           ),
@@ -84,21 +84,20 @@ class SearchRide extends StatelessWidget {
           Align(
             alignment: Alignment.topRight,
             child: Padding(
-            padding: const EdgeInsets.only(right: 10.0,top: 100),
-            child: Container(
-                height: 40,
-                width: 40,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    shape: BoxShape.circle),
-                child: Center(
-                  child: Icon(
-                    size: 21,
-                    Icons.warning,
-                    color: AppColors.primeryColor,
-                  ),
-                )),
-          ),
+              padding: const EdgeInsets.only(right: 10.0, top: 100),
+              child: Container(
+                  height: 40,
+                  width: 40,
+                  decoration: BoxDecoration(
+                      color: Colors.white, shape: BoxShape.circle),
+                  child: Center(
+                    child: Icon(
+                      size: 21,
+                      Icons.warning,
+                      color: AppColors.primeryColor,
+                    ),
+                  )),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 200, top: 500),
@@ -198,7 +197,9 @@ class SearchRide extends StatelessWidget {
           child: CustomButton(
             height: 44,
             width: 325,
-            onPressed: () {},
+            onPressed: () {
+              Get.toNamed(AppRoute.rideconfirm);
+            },
             child: Text(
               'Book Ride',
               style: Theme.of(context)

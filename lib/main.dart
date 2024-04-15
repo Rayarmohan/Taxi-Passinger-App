@@ -35,12 +35,12 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       useInheritedMediaQuery: true,
       builder: (context, child) => GetMaterialApp(
-          theme: AppTheme.appTheme,
-          debugShowCheckedModeBanner: false,
-          title: 'Taxi_passenger_app',
-          home: const DestinationScreen()
-          // getPages: appRoutes(),
-          ),
+        theme: AppTheme.appTheme,
+        debugShowCheckedModeBanner: false,
+        title: 'Taxi_passenger_app',
+        initialRoute: '/',
+        getPages: appRoutes(),
+      ),
     );
   }
 }

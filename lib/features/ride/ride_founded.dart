@@ -15,11 +15,13 @@ class RideFounded extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context, designSize: const Size(360, 690)); // Initialize ScreenUtil with design size
+    ScreenUtil.init(context,
+        designSize:
+            const Size(360, 690)); // Initialize ScreenUtil with design size
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar:  AppBar(
+      appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: Padding(
@@ -27,12 +29,12 @@ class RideFounded extends StatelessWidget {
           child: Container(
               height: 20,
               width: 20,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.all(Radius.circular(30))),
-              child: Center(
+              child: const Center(
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 6),
+                  padding: EdgeInsets.only(left: 6),
                   child: Icon(
                     Icons.arrow_back_ios,
                     size: 18,
@@ -54,14 +56,15 @@ class RideFounded extends StatelessWidget {
             Stack(
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.55, // Extended height
+                  height: MediaQuery.of(context).size.height *
+                      0.55, // Extended height
                   width: MediaQuery.of(context).size.width,
-                  child: CustomPngImage(
+                  child: const CustomPngImage(
                     imageName: 'assets/images/ridefounded1.png',
                     boxFit: BoxFit.cover,
                   ),
                 ),
-                Positioned(
+                const Positioned(
                   right: 10,
                   bottom: 10,
                   child: CustomPngImage(
@@ -76,11 +79,11 @@ class RideFounded extends StatelessWidget {
                   top: 33,
                   child: Container(
                     padding: const EdgeInsets.all(8.0),
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.white,
                       shape: BoxShape.circle,
                     ),
-                    child: Icon(
+                    child: const Icon(
                       Icons.call,
                       color: AppColors.primeryColor,
                       size: 24,
@@ -92,11 +95,11 @@ class RideFounded extends StatelessWidget {
                   top: 80,
                   child: Container(
                     padding: const EdgeInsets.all(8.0),
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.white,
                       shape: BoxShape.circle,
                     ),
-                    child: Icon(
+                    child: const Icon(
                       Icons.warning_amber_rounded,
                       color: AppColors.primeryColor,
                       size: 29,
@@ -113,23 +116,41 @@ class RideFounded extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Ride Founded", style: Theme.of(context).textTheme.titleSmall!.copyWith(color: AppColors.primeryColor, fontSize: 18)),
-                      Text("5 min away", style: Theme.of(context).textTheme.titleSmall!.copyWith(color: Colors.grey, fontWeight: FontWeight.w300, fontSize: 14)),
+                      Text("Ride Founded",
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleSmall!
+                              .copyWith(
+                                  color: AppColors.primeryColor, fontSize: 18)),
+                      Text("5 min away",
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleSmall!
+                              .copyWith(
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: 14)),
                     ],
-
                   ),
-                  SizedBox(height: 16.0,),
+                  const SizedBox(
+                    height: 16.0,
+                  ),
                   const Divider(
-                    height: 16.0, // This sets the total height taken by the divider widget.
-                    thickness: 0.5, // This sets the thickness of the line of the divider.
-                    color: Colors.grey, // Set the color to grey. You can adjust the shade as needed.
+                    height:
+                        16.0, // This sets the total height taken by the divider widget.
+                    thickness:
+                        0.5, // This sets the thickness of the line of the divider.
+                    color: Colors
+                        .grey, // Set the color to grey. You can adjust the shade as needed.
                   ),
-                  SizedBox(height: 16.0,),
-
+                  const SizedBox(
+                    height: 16.0,
+                  ),
                   Row(
                     children: [
-                      CircleAvatar(
-                        backgroundImage: const AssetImage("assets/images/josephdeo.png"),
+                      const CircleAvatar(
+                        backgroundImage:
+                            AssetImage("assets/images/josephdeo.png"),
                         radius: 30,
                       ),
                       const SizedBox(width: 8.0),
@@ -137,43 +158,55 @@ class RideFounded extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text("Joseph Deo", style: Theme.of(context).textTheme.titleMedium!.copyWith(color: AppColors.primeryColor, fontSize: 18.0)),
-                            Text("Swift", style: Theme.of(context).textTheme.bodySmall!.copyWith(color: AppColors.primeryColor, fontSize: 14.0)),
+                            Text("Joseph Deo",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium!
+                                    .copyWith(
+                                        color: AppColors.primeryColor,
+                                        fontSize: 18.0)),
+                            Text("Swift",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodySmall!
+                                    .copyWith(
+                                        color: AppColors.primeryColor,
+                                        fontSize: 14.0)),
                           ],
                         ),
                       ),
                       InkWell(
-                        onTap: (){
-                          Get.to(() => ChatPage());
+                        onTap: () {
+                          Get.to(() => const ChatPage());
                         },
                         child: Container(
                           padding: const EdgeInsets.all(8.0),
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: AppColors.primeryColor,
                             shape: BoxShape.circle,
                           ),
-                          child: Icon(
+                          child: const Icon(
                             Icons.message_rounded,
                             color: Colors.white,
                             size: 24,
                           ),
                         ),
                       ),
-                       SizedBox(width: 9,),
-
-                       Container(
+                      const SizedBox(
+                        width: 9,
+                      ),
+                      Container(
                         padding: const EdgeInsets.all(8.0),
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                           color: Colors.green,
                           shape: BoxShape.circle,
                         ),
-                        child: Icon(
+                        child: const Icon(
                           Icons.phone,
                           color: Colors.white,
                           size: 24,
                         ),
                       ),
-
                     ],
                   ),
                   const SizedBox(height: 18.0),
@@ -186,18 +219,35 @@ class RideFounded extends StatelessWidget {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("Rate per", style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: AppColors.primeryColor, fontSize: 15, )),
-                              SizedBox(height: 5,),
+                              Text("Rate per",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyMedium!
+                                      .copyWith(
+                                        color: AppColors.primeryColor,
+                                        fontSize: 15,
+                                      )),
+                              const SizedBox(
+                                height: 5,
+                              ),
                               Row(
                                 children: [
                                   Image.asset(
                                     'assets/images/walletnew.png', // Replace with your actual image path
-                                    width: 24, // Set the width to fit your design
-                                    height: 24, // Set the height to fit your design
-                                    color: AppColors.primeryColor, // Optional: Apply a color filter if needed
+                                    width:
+                                        24, // Set the width to fit your design
+                                    height:
+                                        24, // Set the height to fit your design
+                                    color: AppColors
+                                        .primeryColor, // Optional: Apply a color filter if needed
                                   ),
-
-                                  Text("Rs 120.5", style: Theme.of(context).textTheme.bodyMedium!.copyWith(color:Colors.black, fontSize: 12)),
+                                  Text("Rs 120.5",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .copyWith(
+                                              color: Colors.black,
+                                              fontSize: 12)),
                                 ],
                               ),
                             ],
@@ -207,19 +257,41 @@ class RideFounded extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Car Number", style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: AppColors.primeryColor, fontSize: 15)),
-                          SizedBox(height: 5,),
-
-                          Text("GR-56-6788", style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Colors.black, fontSize: 12)),
+                          Text("Car Number",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .copyWith(
+                                      color: AppColors.primeryColor,
+                                      fontSize: 15)),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Text("GR-56-6788",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .copyWith(color: Colors.black, fontSize: 12)),
                         ],
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("No. of seats", style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: AppColors.primeryColor, fontSize: 15)),
-                          SizedBox(height: 5,),
-
-                          Text("4 seats", style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: Colors.black, fontSize: 12)),
+                          Text("No. of seats",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .copyWith(
+                                      color: AppColors.primeryColor,
+                                      fontSize: 15)),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          Text("4 seats",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .copyWith(color: Colors.black, fontSize: 12)),
                         ],
                       ),
                     ],
@@ -228,9 +300,7 @@ class RideFounded extends StatelessWidget {
                   CustomButton(
                     height: 44,
                     width: 1.sw,
-                    onPressed: () {
-                      Get.to(() => RideFounded2());
-                    },
+                    onPressed: () {},
                     text: "Cancel Ride",
                     textColor: Colors.white,
                     color: AppColors.primeryColor,

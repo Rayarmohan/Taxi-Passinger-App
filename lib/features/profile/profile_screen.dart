@@ -2,13 +2,16 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:taxi_passenger_app/features/booking_pages/booking_tab.dart';
+import 'package:taxi_passenger_app/features/booking_pages/pre_booking.dart';
+import 'package:taxi_passenger_app/features/help_center/help_center.dart';
+import 'package:taxi_passenger_app/features/home/car_image/car_image_screen.dart';
 import 'package:taxi_passenger_app/features/profile/editprofile_screen.dart';
 import 'package:taxi_passenger_app/features/profile/widgets/update_photo.dart';
 import 'package:taxi_passenger_app/features/profilesettings/profilesettings_screen.dart';
 import 'package:taxi_passenger_app/utils/color/app_colors.dart';
 import 'package:taxi_passenger_app/widgets/custom_app_bar.dart';
 import 'package:taxi_passenger_app/widgets/custom_images.dart';
-
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -23,7 +26,7 @@ class ProfileScreen extends StatelessWidget {
                 .textTheme
                 .headlineMedium!
                 .copyWith(height: 1.7, color: AppColors.primeryColor)),
-        leading:  Padding(
+        leading: Padding(
           padding: EdgeInsets.all(8.0),
           child: InkWell(
             onTap: () {
@@ -46,8 +49,8 @@ class ProfileScreen extends StatelessWidget {
             children: [
               ProfileUpdate(
                   imagePath: 'assets/images/propic.png',
-                  onUpdate: () {                  
-                    Get.to(ProfileEdit());                                       
+                  onUpdate: () {
+                    Get.to(ProfileEdit());
                   }),
               SizedBox(
                 height: 10,
@@ -63,16 +66,15 @@ class ProfileScreen extends StatelessWidget {
               ),
               ListTile(
                 leading: CustomPngImage(
-              imageName: "assets/images/person.png",
-              height: 20,
-              width: 20,
-            ),
+                  imageName: "assets/images/person.png",
+                  height: 20,
+                  width: 20,
+                ),
                 title: Text("Your Profile",
                     style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                      color: Colors.black
-                    )),
+                        fontSize: 16,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.black)),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
                   color: Colors.black,
@@ -84,17 +86,19 @@ class ProfileScreen extends StatelessWidget {
                 color: Colors.black,
               ),
               ListTile(
-                leading:  CustomPngImage(
-              imageName: "assets/images/sandtimer.png",
-              height: 20,
-              width: 20,
-            ),
+                onTap: () {
+                  Get.to(BookingComplete());
+                },
+                leading: CustomPngImage(
+                  imageName: "assets/images/sandtimer.png",
+                  height: 20,
+                  width: 20,
+                ),
                 title: Text("Your Rides",
                     style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                      color: Colors.black
-                    )),
+                        fontSize: 16,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.black)),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
                   color: Colors.black,
@@ -106,17 +110,17 @@ class ProfileScreen extends StatelessWidget {
                 color: Colors.black,
               ),
               ListTile(
+                onTap: () => Get.to(Prebooking()),
                 leading: CustomPngImage(
-              imageName: "assets/images/your ride.png",
-              height: 20,
-              width: 20,
-            ),
+                  imageName: "assets/images/your ride.png",
+                  height: 20,
+                  width: 20,
+                ),
                 title: Text("Pre-Booked Rides",
                     style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                      color: Colors.black
-                    )),
+                        fontSize: 16,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.black)),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
                   color: Colors.black,
@@ -132,17 +136,16 @@ class ProfileScreen extends StatelessWidget {
                   Get.to(Settings());
                 },
                 child: ListTile(
-                  leading:  CustomPngImage(
-              imageName: "assets/images/settins2.png",
-              height: 20,
-              width: 20,
-            ),
+                  leading: CustomPngImage(
+                    imageName: "assets/images/settins2.png",
+                    height: 20,
+                    width: 20,
+                  ),
                   title: Text("Settings",
                       style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.black
-                      )),
+                          fontSize: 16,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.black)),
                   trailing: Icon(
                     Icons.arrow_forward_ios,
                     color: Colors.black,
@@ -155,17 +158,17 @@ class ProfileScreen extends StatelessWidget {
                 color: Colors.black,
               ),
               ListTile(
+                onTap: () {},
                 leading: CustomPngImage(
-              imageName: "assets/images/car4.png",
-              height: 25,
-              width: 25,
-            ),
+                  imageName: "assets/images/car4.png",
+                  height: 25,
+                  width: 25,
+                ),
                 title: Text("Cars",
                     style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                      color: Colors.black
-                    )),
+                        fontSize: 16,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.black)),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
                   color: Colors.black,
@@ -178,19 +181,19 @@ class ProfileScreen extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-      },
+                  Get.to(HelpCenter());
+                },
                 child: ListTile(
                   leading: CustomPngImage(
-              imageName: "assets/images/helpcenter.png",
-              height: 20,
-              width: 20,
-            ),
+                    imageName: "assets/images/helpcenter.png",
+                    height: 20,
+                    width: 20,
+                  ),
                   title: Text("Help Center",
                       style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.black
-                      )),
+                          fontSize: 16,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.black)),
                   trailing: Icon(
                     Icons.arrow_forward_ios,
                     color: Colors.black,
@@ -203,21 +206,18 @@ class ProfileScreen extends StatelessWidget {
                 color: Colors.black,
               ),
               InkWell(
-                onTap: () {
-                 
-                },
+                onTap: () {},
                 child: ListTile(
-                  leading:  CustomPngImage(
-              imageName: "assets/images/person2.png",
-              height: 20,
-              width: 20,
-            ),
+                  leading: CustomPngImage(
+                    imageName: "assets/images/person2.png",
+                    height: 20,
+                    width: 20,
+                  ),
                   title: Text("Privacy Policy",
                       style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.black
-                      )),
+                          fontSize: 16,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.black)),
                   trailing: Icon(
                     Icons.arrow_forward_ios,
                     color: Colors.black,
@@ -233,19 +233,17 @@ class ProfileScreen extends StatelessWidget {
                 onTap: () {
                   _showBottomSheet(context);
                 },
-                
                 child: ListTile(
-                  leading:  CustomPngImage(
-              imageName: "assets/images/signout.png",
-              height: 20,
-              width: 20,
-            ),
+                  leading: CustomPngImage(
+                    imageName: "assets/images/signout.png",
+                    height: 20,
+                    width: 20,
+                  ),
                   title: Text("Log Out",
                       style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.black
-                      )),
+                          fontSize: 16,
+                          fontWeight: FontWeight.normal,
+                          color: Colors.black)),
                   trailing: Icon(
                     Icons.arrow_forward_ios,
                     color: Colors.black,
@@ -257,8 +255,6 @@ class ProfileScreen extends StatelessWidget {
           )),
         ),
       ),
-
-      
     );
   }
 
@@ -335,7 +331,6 @@ class ProfileScreen extends StatelessWidget {
           ),
         );
       },
-      
     );
   }
 }

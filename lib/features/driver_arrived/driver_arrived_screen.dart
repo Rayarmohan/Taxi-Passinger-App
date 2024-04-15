@@ -40,7 +40,7 @@ class DriverArrived extends StatelessWidget {
             child: Column(
               children: [
                 CustomPngImage(
-                  imageName: "assets/images/call_icon.png",
+                  imageName: "assets/images/call_icon1.png",
                   height: 40,
                   width: 40,
                   boxFit: BoxFit.contain,
@@ -65,17 +65,16 @@ class DriverArrived extends StatelessWidget {
                 0.13, // Adjust the value as needed
             right: 20,
             child: CustomPngImage(
-              imageName: "assets/images/warning_icon.png",
+              imageName: "assets/images/warning_icon1.png",
               height: 40,
               width: 40,
               boxFit: BoxFit.contain,
             ),
           ),
-         Positioned(
+          Positioned(
             top: MediaQuery.of(context).size.height *
                 0.57, // Adjust the value as needed
             right: 20,
-            
 
             child: CustomPngImage(
               imageName: "assets/images/currentlocayion.png",

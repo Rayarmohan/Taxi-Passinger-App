@@ -43,7 +43,7 @@ class NavigateYourRide extends StatelessWidget {
             child: Column(
               children: [
                 CustomPngImage(
-                  imageName: "assets/images/call_icon.png",
+                  imageName: "assets/images/call_icon1.png",
                   height: 40,
                   width: 40,
                   boxFit: BoxFit.contain,
@@ -68,7 +68,7 @@ class NavigateYourRide extends StatelessWidget {
                 0.13, // Adjust the value as needed
             right: 20,
             child: CustomPngImage(
-              imageName: "assets/images/warning_icon.png",
+              imageName: "assets/images/warning_icon1.png",
               height: 40,
               width: 40,
               boxFit: BoxFit.contain,
@@ -93,7 +93,7 @@ class NavigateYourRide extends StatelessWidget {
                 325, // Adjust the value as needed
             child: Center(
               child: Padding(
-                padding: const EdgeInsets.only( right: 10.0),
+                padding: const EdgeInsets.only(right: 10.0),
                 child: CustomPngImage(
                   height: 650.h,
                   width: 650,
