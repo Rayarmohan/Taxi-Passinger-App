@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+class TransAppBar extends StatelessWidget implements PreferredSizeWidget {
   // final String title;
   final Widget title;
   final Widget? leading;
+  final Color? background;
   List<Widget>? actions;
-  CustomAppBar({super.key, required this.title, this.leading, this.actions});
+
+  TransAppBar({super.key, required this.title, this.leading, this.actions, this.background});
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +21,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       //   title,
       //   style: const TextStyle(color: Colors.black),
       // ),
-      backgroundColor: Colors.white, // Set your custom background color
- 
+      backgroundColor: background ?? Colors.white, // Set your custom background color
+
       leading: leading,
       actions: actions,
     );
