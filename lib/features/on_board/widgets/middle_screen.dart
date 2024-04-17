@@ -45,7 +45,7 @@ class MiddleScreen extends StatelessWidget {
                 boxFit: BoxFit.fitWidth,
               ),
               Text(
-                "Your ride, Your Rules",
+                "Your Ride, Your Rules",
                 style: Theme.of(context).textTheme.headlineMedium,
               )
             ],
