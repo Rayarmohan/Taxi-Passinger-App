@@ -46,13 +46,14 @@ class PickupScreen extends StatelessWidget {
             ),
           ),
           const Padding(
-            padding: EdgeInsets.fromLTRB(30, 90, 30, 0),
+            padding: EdgeInsets.fromLTRB(30, 120, 30, 0),
             child: CustomSearchBar(
                 hintText: '6391 Elgin, St.Celina, Delawa..',
-                leadingIcon: Icon(
-                  Icons.search,
-                  color: AppColors.primeryColor,
-                ),
+                leadingIcon: CustomPngImage(
+                          imageName: "assets/images/search_icon.png",
+                          height: 25,
+                          width: 25,
+                        ),
                 trailingIcon: Icon(
                   Icons.close_rounded,
                   color: AppColors.primeryColor,

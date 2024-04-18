@@ -27,10 +27,28 @@ class _BookRideState extends State<BookRide> {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/images/map1.png'),
-                fit: BoxFit.cover, // This will cover the entire background
+                fit: BoxFit.cover,
               ),
             ),
           ),
+          Positioned(
+              top: 120,
+              left: 0,
+              right: 90,
+              child: Container(
+                height: 29,
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage('assets/images/location_red_point.png'),
+                    fit:
+                        BoxFit.contain, // This will cover the entire background
+                  ),
+                ),
+              )),
+          //   CustomPngImage(
+          //   imageName: 'assets/images/map1.png',
+          //   boxFit: BoxFit.cover,
+          // ),
           Column(
             children: [
               Expanded(
@@ -42,7 +60,9 @@ class _BookRideState extends State<BookRide> {
                           .textTheme
                           .headlineMedium!
                           .copyWith(
-                              height: 1.7, color: AppColors.primeryColor)),
+                              height: 1.7,
+                              color: AppColors.primeryColor,
+                              fontSize: 20)),
                   leading: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: InkWell(
@@ -85,8 +105,12 @@ class _BookRideState extends State<BookRide> {
                                           child: Image.asset(
                                               'assets/images/dottedline.png'),
                                         ),
-                                        const Icon(Icons.location_on,
-                                            size: 18.0),
+                                        const CustomPngImage(
+                                          imageName: 'assets/images/location_icon.png',
+                                          boxFit: BoxFit.cover,
+                                          height: 20,
+                                          width: 15.14,
+                                        ),
                                       ],
                                     ),
                                     Expanded(
@@ -184,7 +208,7 @@ class _BookRideState extends State<BookRide> {
                                     const Icon(
                                       Icons.access_time_filled_rounded,
                                       color: AppColors.primeryColor,
-                                      size: 35,
+                                      size:25,
                                     ),
                                     const SizedBox(width: 30),
                                     Text(
@@ -202,6 +226,8 @@ class _BookRideState extends State<BookRide> {
                                 const Icon(
                                   Icons.arrow_forward_ios,
                                   color: AppColors.primeryColor,
+                                  size: 18,
+                                  
                                 ),
                               ],
                             ),
@@ -240,16 +266,18 @@ class _BookRideState extends State<BookRide> {
                                   Row(
                                     children: [
                                       Container(
-                                          height: 40,
-                                          width: 40,
+                                          height: 30,
+                                          width: 30,
                                           child: const CustomPngImage(
                                             imageName:
                                                 'assets/images/fileicon.png',
                                             boxFit: BoxFit.fill,
+                                            width: 12.95,
+                                            height: 17,
                                           )),
                                       const SizedBox(width: 30),
                                       Text(
-                                        'Pre-Booke Rides',
+                                        'Pre-Booked Rides',
                                         style: Theme.of(context)
                                             .textTheme
                                             .bodyMedium!
@@ -263,6 +291,7 @@ class _BookRideState extends State<BookRide> {
                                   const Icon(
                                     Icons.arrow_forward_ios,
                                     color: AppColors.primeryColor,
+                                     size: 18,
                                   ),
                                 ],
                               ),
@@ -273,7 +302,7 @@ class _BookRideState extends State<BookRide> {
                           ),
                           Padding(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 30, vertical: 5),
+                                horizontal: 27, vertical: 5),
                             child: GestureDetector(
                               onTap: () => Get.toNamed(AppRoute.bookForSelf),
                               child: Row(
@@ -285,9 +314,9 @@ class _BookRideState extends State<BookRide> {
                                       const Icon(
                                         Icons.person,
                                         color: AppColors.primeryColor,
-                                        size: 35,
+                                        size: 30,
                                       ),
-                                      const SizedBox(width: 31),
+                                      const SizedBox(width: 30),
                                       Text(
                                         'Book for self',
                                         style: Theme.of(context)
@@ -303,6 +332,7 @@ class _BookRideState extends State<BookRide> {
                                   const Icon(
                                     Icons.arrow_forward_ios,
                                     color: AppColors.primeryColor,
+                                     size: 18,
                                   ),
                                 ],
                               ),
@@ -313,7 +343,7 @@ class _BookRideState extends State<BookRide> {
                           ),
                           Padding(
                             padding: const EdgeInsets.symmetric(
-                                horizontal: 35, vertical: 5),
+                                horizontal: 27, vertical: 5),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -327,7 +357,7 @@ class _BookRideState extends State<BookRide> {
                                               'assets/images/promoicon.png',
                                           boxFit: BoxFit.fill,
                                         )),
-                                    const SizedBox(width: 32),
+                                    const SizedBox(width: 30),
                                     Text(
                                       'Apply Promo',
                                       style: Theme.of(context)
@@ -343,6 +373,7 @@ class _BookRideState extends State<BookRide> {
                                 const Icon(
                                   Icons.arrow_forward_ios,
                                   color: AppColors.primeryColor,
+                                   size: 18,
                                 ),
                               ],
                             ),

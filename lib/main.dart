@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:taxi_passenger_app/features/address_selection/address_selection.dart';
 import 'package:taxi_passenger_app/features/arrived/arrived_screen.dart';
+import 'package:taxi_passenger_app/features/book_ride_2/book_for_self.dart';
 import 'package:taxi_passenger_app/features/destination/destination_screen.dart';
 import 'package:taxi_passenger_app/features/driver_arrived/driver_arrived_screen.dart';
 import 'package:taxi_passenger_app/features/home/car_image/car_image_screen.dart';
