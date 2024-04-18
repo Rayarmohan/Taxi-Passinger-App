@@ -71,9 +71,9 @@ class SearchRide extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 100.0),
+            padding: const EdgeInsets.only(top: 150.0),
             child: Align(
-              alignment: Alignment.topCenter,
+              alignment: Alignment.center,
               child: Column(
                 children: [
                   _buildTimer(context),
@@ -221,29 +221,29 @@ class SearchRide extends StatelessWidget {
             borderRadius: const BorderRadius.all(Radius.circular(60)),
             color: Colors.white,
           ),
-          height: 90,
-          width: 90,
+          height: 73,
+          width: 73,
           child: Stack(
             fit: StackFit.expand,
-            children: [
+            children: const [
               Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     CustomPngImage(
-                      height: 50,
-                      width: 50,
+                      height: 26,
+                      width: 39,
                       imageName: 'assets/images/car_front.png',
                       boxFit: BoxFit.contain,
                     ),
                   ],
                 ),
               ),
-              const CustomCircularProgressIndicator(
-                progress: 0.5, // Set progress to 70%
-                backgroundColor: Colors.grey, // Background color
-                progressColor: AppColors.primeryColor, // Progress color
-                strokeWidth: 5.0, // Thickness of the progress indicator
+               CustomCircularProgressIndicator(
+                progress: 0.5, 
+                backgroundColor: Colors.transparent,
+                progressColor: AppColors.primeryColor,
+                strokeWidth: 5.0, 
               ),
             ],
           ),

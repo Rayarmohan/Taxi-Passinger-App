@@ -25,10 +25,10 @@ class NotificationScreen extends StatelessWidget {
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(12.0),
             child: Container(
-              width: 58 ,
-              height: 28,
+              width: 55 ,
+              height: 10,
               color: AppColors.primeryColor,
               child: Center(
                 child: Text(
@@ -36,7 +36,10 @@ class NotificationScreen extends StatelessWidget {
                   style: Theme.of(context)
                       .textTheme
                       .titleSmall!
-                      .copyWith(height: 1.7, color: AppColors.white),
+                      .copyWith(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      height: 1.7, color: AppColors.white),
                 ),
               ),
             ),
@@ -77,7 +80,10 @@ class NotificationScreen extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: 3,
                 itemBuilder: (context, index) {
-                  return const NotificationContainer();
+                  return const Padding(
+                    padding: const EdgeInsets.only(top:4.0,bottom: 4),
+                    child: const NotificationContainer(),
+                  );
                 },
               ),
               
@@ -107,7 +113,10 @@ class NotificationScreen extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: 2,
                 itemBuilder: (context, index) {
-                  return const NotificationContainer();
+                  return Padding(
+                    padding: const EdgeInsets.only(top:4.0,bottom: 4),
+                    child: const NotificationContainer(),
+                  );
                 },
               ),
             ],

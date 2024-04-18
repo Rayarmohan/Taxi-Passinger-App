@@ -14,7 +14,7 @@ class CarImageScreen extends StatefulWidget {
 class _CarImageScreenState extends State<CarImageScreen> {
   late ImageData _selectedImage;
   final List<ImageData> _images = [
-    ImageData('assets/images/car1.png'),
+    ImageData('assets/images/car8.png'),
     ImageData('assets/images/car2.png'),
     ImageData('assets/images/car3.png'),
     ImageData('assets/images/car4.png'),

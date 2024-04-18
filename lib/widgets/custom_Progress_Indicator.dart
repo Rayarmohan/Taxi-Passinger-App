@@ -67,8 +67,8 @@ class CirclePainter extends CustomPainter {
     double sweepAngle = progress * 360;
     canvas.drawArc(
       Rect.fromCircle(center: Offset(center, center), radius: radius),
-      -90 * 3.14 / 180, // startAngle is -90 degrees in radians
-      sweepAngle * 3.14 / 180, // sweepAngle is in radians
+      -90 * 3.14 / 180, 
+      sweepAngle * 3.14 / 180,
       false,
       progressPaint,
     );

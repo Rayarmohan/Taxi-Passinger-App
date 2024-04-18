@@ -10,6 +10,7 @@ import 'package:taxi_passenger_app/features/navigation_bar/landing_page_controll
 import 'package:taxi_passenger_app/features/notification/notification_screen.dart';
 import 'package:taxi_passenger_app/features/profile/profile_screen.dart';
 import 'package:taxi_passenger_app/utils/color/app_colors.dart';
+import 'package:taxi_passenger_app/widgets/custom_images.dart';
 
 class LandingPage extends StatelessWidget {
   final TextStyle selectedLabelStyle = const TextStyle(
@@ -46,15 +47,15 @@ class LandingPage extends StatelessWidget {
     return Obx(
       () => BottomNavigationBar(
         items: [
-          _buildBottomNavigationBarItem('Home', Icons.home,
+          _buildBottomNavigationBarItem('Home', 'bottomnav_home',20,20,
               bottomNavigationController.tabIndex.value == 0, context),
-          _buildBottomNavigationBarItem('Earnings', Icons.bar_chart_outlined,
+          _buildBottomNavigationBarItem('Earnings', 'bottomnav_earnings',20,20,
               bottomNavigationController.tabIndex.value == 1, context),
-          _buildBottomNavigationBarItem('History', Icons.history,
+          _buildBottomNavigationBarItem('History', 'bottomnav_history',20,20,
               bottomNavigationController.tabIndex.value == 2, context),
-          _buildBottomNavigationBarItem('Notification', Icons.notifications,
+          _buildBottomNavigationBarItem('Notification', 'bottomnav_notifications',20,16,
               bottomNavigationController.tabIndex.value == 3, context),
-          _buildBottomNavigationBarItem('Profile', Icons.person,
+          _buildBottomNavigationBarItem('Profile', 'bottomnav_profile',20,18,
               bottomNavigationController.tabIndex.value == 4, context),
         ],
         currentIndex: bottomNavigationController.tabIndex.value,
@@ -69,27 +70,23 @@ class LandingPage extends StatelessWidget {
   }
 
   BottomNavigationBarItem _buildBottomNavigationBarItem(
-      String label, IconData icon, bool isActive, BuildContext context) {
-    TextStyle commonTextStyle = TextStyle(
-        fontSize: 10,
-        fontWeight: FontWeight.w500,
-        color: isActive
-            ? AppColors.primeryColor
-            : const Color.fromARGB(255, 211, 209, 209));
+      String label, String path,double height,double width , bool isActive, BuildContext context) {
     return BottomNavigationBarItem(
       icon: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(
-            icon,
-            size: 20,
+          CustomSvgImage(
+            imageName: path,
+            height: height,
+            width: width,
+            color: Colors.grey,
           ),
-          const SizedBox(
+          SizedBox(
             height: 5,
           ),
           Text(
             label,
-            style: commonTextStyle,
+            style: TextStyle(fontSize: 10, fontWeight: FontWeight.w500),
           )
           // Inactive color
         ],
@@ -98,27 +95,28 @@ class LandingPage extends StatelessWidget {
       activeIcon: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(
-            icon,
+          CustomSvgImage(
             color: AppColors.primeryColor,
-            size: 20,
+            imageName: path,
+            height: height,
+            width: width,
           ),
-          const SizedBox(
+          SizedBox(
             height: 4,
           ),
           Text(label,
-              style: const TextStyle(
+              style: TextStyle(
                   color: AppColors.primeryColor,
                   fontSize: 10,
                   fontWeight: FontWeight.w500)),
-          const SizedBox(
+          SizedBox(
             height: 4,
           ),
           Container(
             width: 50,
             height: 4,
-            margin: const EdgeInsets.only(top: 2),
-            decoration: const BoxDecoration(
+            margin: EdgeInsets.only(top: 2),
+            decoration: BoxDecoration(
               borderRadius: BorderRadius.horizontal(
                   left: Radius.circular(30.0), right: Radius.circular(30.0)),
               color: AppColors.primeryColor,

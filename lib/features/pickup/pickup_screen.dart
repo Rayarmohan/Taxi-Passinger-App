@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:taxi_passenger_app/features/home/widgets/custom_app_bar.dart';
 import 'package:taxi_passenger_app/features/saved_places/widgets/custom_searchbar.dart';
@@ -48,13 +46,14 @@ class PickupScreen extends StatelessWidget {
             ),
           ),
           const Padding(
-            padding: EdgeInsets.fromLTRB(30, 90, 30, 0),
+            padding: EdgeInsets.fromLTRB(30, 120, 30, 0),
             child: CustomSearchBar(
                 hintText: '6391 Elgin, St.Celina, Delawa..',
-                leadingIcon: Icon(
-                  Icons.search,
-                  color: AppColors.primeryColor,
-                ),
+                leadingIcon: CustomPngImage(
+                          imageName: "assets/images/search_icon.png",
+                          height: 25,
+                          width: 25,
+                        ),
                 trailingIcon: Icon(
                   Icons.close_rounded,
                   color: AppColors.primeryColor,
@@ -77,7 +76,7 @@ class PickupScreen extends StatelessWidget {
               child: CustomPngImage(
                 height: 50,
                 width: 50,
-                imageName: 'assets/images/target_icon3.png',
+                imageName: 'assets/images/location3.png',
                 boxFit: BoxFit.contain,
               ),
             ),
