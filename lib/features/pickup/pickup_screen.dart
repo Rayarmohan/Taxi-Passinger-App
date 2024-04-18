@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:taxi_passenger_app/features/home/widgets/custom_app_bar.dart';
 import 'package:taxi_passenger_app/features/saved_places/widgets/custom_searchbar.dart';
@@ -77,7 +75,7 @@ class PickupScreen extends StatelessWidget {
               child: CustomPngImage(
                 height: 50,
                 width: 50,
-                imageName: 'assets/images/target_icon3.png',
+                imageName: 'assets/images/location3.png',
                 boxFit: BoxFit.contain,
               ),
             ),
