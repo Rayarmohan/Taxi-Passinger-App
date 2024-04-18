@@ -85,7 +85,7 @@ class RideFounded extends StatelessWidget {
                   top: MediaQuery.of(context).size.height *
                       0.47, // Adjust the value as needed
                   right: 20,
-
+      
                   child: CustomPngImage(
                     imageName: "assets/images/currentlocayion.png",
                     height: 50,
@@ -108,7 +108,8 @@ class RideFounded extends StatelessWidget {
                               .textTheme
                               .titleSmall!
                               .copyWith(
-                                  color: AppColors.primeryColor, fontSize: 18)),
+                                  color: AppColors.primeryColor,
+                                  fontSize: 18)),
                       Text("5 min away",
                           style: Theme.of(context)
                               .textTheme

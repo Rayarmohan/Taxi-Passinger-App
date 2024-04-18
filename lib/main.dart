@@ -13,7 +13,6 @@ import 'package:taxi_passenger_app/features/navigation/navigation_screen.dart';
 import 'package:taxi_passenger_app/features/rate_driver/rate_driver_screen.dart';
 import 'package:taxi_passenger_app/features/ride/ride_confirmation.dart';
 import 'package:taxi_passenger_app/features/ride/ride_founded.dart';
-import 'package:taxi_passenger_app/features/ride/ride_founded.dart';
 import 'package:taxi_passenger_app/features/ride/ride_founded2.dart';
 import 'package:taxi_passenger_app/features/sos/sos_screen.dart';
 import 'package:taxi_passenger_app/features/verify_code/verify_code_screen.dart';
@@ -43,8 +42,6 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Taxi_passenger_app',
         initialRoute: '/',
-        
-
         getPages: appRoutes(),
       ),
     );
