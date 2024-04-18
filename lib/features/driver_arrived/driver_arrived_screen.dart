@@ -61,8 +61,7 @@ class DriverArrived extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: MediaQuery.of(context).size.height *
-                0.13, // Adjust the value as needed
+            top: 60, // Adjust the value as needed
             right: 20,
             child: CustomPngImage(
               imageName: "assets/images/warning_icon1.png",
@@ -72,8 +71,7 @@ class DriverArrived extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: MediaQuery.of(context).size.height *
-                0.57, // Adjust the value as needed
+            top: 400, // Adjust the value as needed
             right: 20,
 
             child: CustomPngImage(
