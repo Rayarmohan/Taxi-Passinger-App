@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:taxi_passenger_app/utils/color/app_colors.dart';
 
 // ignore: must_be_immutable
 class CustomTextField extends StatelessWidget {
@@ -76,7 +77,7 @@ class CustomTextField extends StatelessWidget {
           fontSize: 16,
           fontWeight: FontWeight.w400,
           height: 1.275,
-          color: Colors.grey,
+          color: Colors.black,
         ),
       ),
     );
@@ -142,11 +143,11 @@ class CustomTextFieldInt extends StatelessWidget {
         enabled: true,
         enabledBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(2.0)),
-          borderSide: BorderSide(color: Colors.grey),
+          borderSide: BorderSide(color: AppColors.lightGrey),
         ),
         focusedBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(2.0)),
-          borderSide: BorderSide(color: Colors.grey),
+          borderSide: BorderSide(color: AppColors.lightGrey),
         ),
         errorBorder: const OutlineInputBorder(
           borderRadius: BorderRadius.all(Radius.circular(2.0)),
