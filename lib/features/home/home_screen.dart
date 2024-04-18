@@ -34,19 +34,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         actions: const [
-          Padding(
-            padding: EdgeInsets.only(right: 22, top: 10),
-            child: Column(
-              children: [
-                CustomPngImage(
-                  imageName: "assets/images/call_icon1.png",
-                  height: 40,
-                  width: 40,
-                  boxFit: BoxFit.contain,
-                ),
-              ],
-            ),
-          )
+
         ],
       ),
       body: Stack(
@@ -61,13 +49,28 @@ class HomeScreen extends StatelessWidget {
           ),
           const Align(
             alignment: Alignment.topRight,
-            child: Padding(
-              padding: EdgeInsets.only(top: 80, right: 20),
-              child: CustomPngImage(
-                imageName: "assets/images/warning_icon1.png",
-                height: 40,
-                width: 40,
-                boxFit: BoxFit.contain,
+            child: Padding(padding: EdgeInsets.only(top: 15, right: 15),
+              child: Column(
+                children: [
+                  Column(
+                    children: [
+                      CustomPngImage(
+                        imageName: "assets/images/call_icon1.png",
+                        height: 40,
+                        width: 40,
+                        boxFit: BoxFit.contain,
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 10,),
+                  CustomPngImage(
+                              imageName: "assets/images/warning_icon1.png",
+                    height: 40,
+                    width: 40,
+                    boxFit: BoxFit.contain,
+                  ),
+
+                ],
               ),
             ),
           ),
@@ -99,125 +102,128 @@ class HomeScreen extends StatelessWidget {
 Widget _listview() {
   // ignore: sized_box_for_whitespace
   return Container(
-    height: 130,
+    height: 123,
     child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: 3,
         itemBuilder: ((context, index) {
-          return Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Stack(
-                children: [
-                  GestureDetector(
-                    onTap: () => Get.toNamed(AppRoute.pickUp),
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(width: 1.0, color: Colors.black)),
-                      height: 130,
-                      width: 180,
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                left: 20.0, top: 10, bottom: 10),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                // ignore: avoid_unnecessary_containers
-                                Container(
-                                  child: const CustomPngImage(
-                                    height: 26,
-                                    width: 54.6,
-                                    imageName: 'assets/images/car.png',
-                                  ),
+          List<String> adata  = ["Swift","Sedan","SUV"];
+          List<String> price  = ["Rs. 108","Rs. 84","Rs. 105"];
+          return Stack(
+            children: [
+              GestureDetector(
+                onTap: () => Get.toNamed(AppRoute.pickUp),
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        border: Border.all(width: 1.0, color: Colors.black)),
+                    height: 123,
+                    width: 155,
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              left: 20.0, top: 10, bottom: 10),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Container(
+                                child: const CustomPngImage(
+                                  height: 26,
+                                  width: 54.6,
+                                  imageName: 'assets/images/car.png',
                                 ),
-                              ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          decoration: const BoxDecoration(
+                            border: Border(
+                              top: BorderSide(
+                                  width: 1.0,
+                                  color: Colors.black,
+                                  style: BorderStyle.solid),
                             ),
                           ),
-                          Container(
-                            decoration: const BoxDecoration(
-                              border: Border(
-                                top: BorderSide(
-                                    width: 1.0,
-                                    color: Colors.black,
-                                    style: BorderStyle.solid),
-                              ),
-                            ),
-                            child: Column(
-                              children: [
-                                Padding(
-                                  padding:
-                                      const EdgeInsets.only(top: 5.0, left: 20),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Text("Swift",
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .bodyLarge!
-                                              .copyWith(
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.w500,
-                                                  color:
-                                                      AppColors.primeryColor)),
-                                      const SizedBox(
-                                        width: 41,
-                                      ),
-                                      Text("Rs 104.0",
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .bodyLarge!
-                                              .copyWith(
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.w700,
-                                                  color:
-                                                      AppColors.primeryColor)),
-                                    ],
-                                  ),
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding:
+                                const EdgeInsets.only(top: 5.0, left: 20),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text(adata[index],
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyLarge!
+                                            .copyWith(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w500,
+                                            color:
+                                            AppColors.primeryColor)),
+                                    SizedBox(
+                                      width: 35,
+                                    ),
+                                    Text(price[index],
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyLarge!
+                                            .copyWith(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w700,
+                                            color:
+                                            AppColors.primeryColor)),
+                                  ],
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 20.0),
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    children: [
-                                      Text("4 Seats Capacity",
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .bodyMedium!
-                                              .copyWith(
-                                                  height: 1.7,
-                                                  fontSize: 12,
-                                                  fontWeight: FontWeight.w400,
-                                                  color:
-                                                      AppColors.primeryColor)),
-                                    ],
-                                  ),
-                                )
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 20.0),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text("4 Seats Capacity",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyMedium!
+                                            .copyWith(
+                                            height: 1.7,
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w400,
+                                            color:
+                                            AppColors.primeryColor)),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
                     ),
                   ),
-                  Positioned(
-                    top: 1,
-                    right: 1,
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
-                        shape: BoxShape.circle,
-                      ),
-                      child: const Icon(
-                        Icons.check_circle,
-                        color: AppColors.primeryColor,
-                        size: 24,
-                      ),
+                ),
+              ),
+              if (index == 0)
+                Positioned(
+                  top: 8,
+                  right: 8,
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                    ),
+                    child: const Icon(
+                      Icons.check_circle,
+                      color: AppColors.primeryColor,
+                      size: 20,
                     ),
                   ),
-                ],
-              ));
+                ),
+            ],
+          );
         })),
   );
 }
