@@ -78,9 +78,9 @@ class Prebooking extends StatelessWidget {
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      IconText(icon: Icons.location_on, text: '4.5 mile'),
-                      IconText(icon: Icons.watch_later_rounded, text: '4 mins'),
-                      IconText(icon: Icons.wallet, text: 'Rs. 125'),
+                      IconText(imagePath: 'assets/images/location_icon.png', text: '4.5 mile',height: 20,width: 15,),
+                      IconText(imagePath: 'assets/images/walletnew.png', text: '4 mins',height: 20,width: 20,),
+                      IconText(imagePath: 'assets/images/time.png', text: 'Rs. 125',height: 20,width: 20,),
                     ],
                   ),
                   const SizedBox(height: 19.0),

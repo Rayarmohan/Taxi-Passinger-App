@@ -3,12 +3,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:taxi_passenger_app/features/book_ride/book_ride_screen.dart';
+import 'package:taxi_passenger_app/features/booking_pages/booking_tab.dart';
 import 'package:taxi_passenger_app/features/driver_arrived/driver_arrived_screen.dart';
 import 'package:taxi_passenger_app/features/home/home_screen.dart';
 import 'package:taxi_passenger_app/features/manage_address/manage_address_screen.dart';
 import 'package:taxi_passenger_app/features/navigateyour_ride/naviagate_your_ride_screen.dart';
 import 'package:taxi_passenger_app/features/navigation/navigation_screen.dart';
 import 'package:taxi_passenger_app/features/navigation_bar/landing_page.dart';
+import 'package:taxi_passenger_app/features/notification/notification_screen.dart';
 import 'package:taxi_passenger_app/features/rate_driver/rate_driver_screen.dart';
 import 'package:taxi_passenger_app/features/sos/sos_screen.dart';
 import 'package:taxi_passenger_app/features/verify_code/verify_code_screen.dart';
@@ -37,8 +40,8 @@ class MyApp extends StatelessWidget {
         theme: AppTheme.appTheme,
         debugShowCheckedModeBanner: false,
         title: 'Taxi_passenger_app',
-        initialRoute: '/',
-        // home: LandingPage(),
+        // initialRoute: '/',
+        home: NotificationScreen(),
         getPages: appRoutes(),
       ),
     );
