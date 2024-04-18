@@ -1,6 +1,9 @@
 // ignore_for_file: sort_child_properties_last
 
+import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:taxi_passenger_app/widgets/custom_images.dart';
 import '../../../utils/color/app_colors.dart';
 
 class BookingCard extends StatelessWidget {
@@ -13,7 +16,7 @@ class BookingCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(20.0),
       child: Card(
           elevation: 4,
           child: Stack(
@@ -41,9 +44,9 @@ class BookingCard extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                           color: AppColors.primeryColor),
                     ),
-                    trailing: Padding(
-                      padding: const EdgeInsets.only(top: 18.0),
-                      child: const Row(
+                    trailing: const Padding(
+                      padding: EdgeInsets.only(top: 18.0),
+                      child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Icon(Icons.star, color: Colors.amber, size: 15),
@@ -56,9 +59,9 @@ class BookingCard extends StatelessWidget {
                   const Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      IconText(icon: Icons.location_on, text: '4.5 mile'),
-                      IconText(icon: Icons.watch_later_rounded, text: '4 mins'),
-                      IconText(icon: Icons.wallet, text: 'Rs. 125'),
+                      IconText(imagePath: 'assets/images/location_icon.png', text: '4.5 mile',height: 20,width: 15,),
+                      IconText(imagePath: 'assets/images/time.png', text: '4 mins',height: 20,width: 20,),
+                      IconText(imagePath: 'assets/images/walletnew.png', text: 'Rs. 125',height: 20,width: 20,),
                     ],
                   ),
                   const SizedBox(height: 19.0),
@@ -89,10 +92,10 @@ class BookingCard extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          SizedBox(width: 20.0),
-                          Icon(Icons.radio_button_checked_rounded,
+                          const SizedBox(width: 20.0),
+                          const Icon(Icons.radio_button_checked_rounded,
                               color: AppColors.primeryColor),
-                          SizedBox(width: 20),
+                          const SizedBox(width: 20),
                           Text(
                             '219 Florida Rd, Durban',
                             style: Theme.of(context)
@@ -105,26 +108,34 @@ class BookingCard extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(height: 2.0),
-                      Row(
+                      const SizedBox(height: 2.0),
+                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          SizedBox(width: 25.0),
-                          SizedBox(
-                              height: 20,
-                              child: VerticalDivider(
-                                thickness: 0.5,
-                                color: Colors.black,
-                              )),
+                          SizedBox(width: 28.w),
+                           SizedBox(
+                            height: 22.h,
+                            child:const DottedLine(
+                              direction: Axis.vertical,
+                              lineLength: double.infinity,
+                              lineThickness: 1,
+                              dashLength: 4.0,
+                              dashColor: Colors.black,
+                              dashRadius: 0.0,
+                              dashGapLength: 4.0,
+                              dashGapColor: Colors.transparent,
+                              dashGapRadius: 0.0,
+                            ),
+                          ),
                         ],
                       ),
-                      SizedBox(height: 2.0),
+                      const SizedBox(height: 2.0),
                       Row(
                         children: [
-                          SizedBox(width: 20.0),
-                          Icon(Icons.location_on,
+                          const SizedBox(width: 20.0),
+                          const Icon(Icons.location_on,
                               color: AppColors.primeryColor),
-                          SizedBox(width: 20.0),
+                          const SizedBox(width: 20.0),
                           Text(
                             'KwaZulu-Natal, Cape Town',
                             style: Theme.of(context)
@@ -155,7 +166,7 @@ class BookingCard extends StatelessWidget {
                                   color:
                                       const Color.fromRGBO(255, 255, 255, 1)),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 15,
                         ),
                         Text(
@@ -168,8 +179,8 @@ class BookingCard extends StatelessWidget {
                                   fontWeight: FontWeight.w500,
                                   color: AppColors.white),
                         ),
-                        Spacer(),
-                        Icon(Icons.chevron_right),
+                        const Spacer(),
+                        const Icon(Icons.chevron_right),
                       ],
                     ),
                     style: ElevatedButton.styleFrom(
@@ -184,8 +195,8 @@ class BookingCard extends StatelessWidget {
                 top: 10,
                 right: 8,
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                  decoration: BoxDecoration(
+                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  decoration: const BoxDecoration(
                     color: AppColors.primeryColor,
                     shape: BoxShape.rectangle,
                   ),
@@ -205,21 +216,30 @@ class BookingCard extends StatelessWidget {
 }
 
 class IconText extends StatelessWidget {
-  final IconData icon;
+  final String imagePath;
   final String text;
+  final double width;
+  final double height;
+
 
   const IconText({
     Key? key,
-    required this.icon,
+    required this.imagePath,
     required this.text,
+    required this.width,
+    required this.height,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(icon, size: 20.0, color: AppColors.primeryColor),
-        SizedBox(width: 4.0),
+        CustomPngImage(
+          imageName: imagePath,
+          height: height,
+          width: width,
+        ),
+        const SizedBox(width: 8.0),
         Text(
           text,
           style: Theme.of(context).textTheme.bodyMedium!.copyWith(
