@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:taxi_passenger_app/features/driver_arrived/driver_arrived_screen.dart';
+import 'package:taxi_passenger_app/features/help_center/help_center.dart';
 import 'package:taxi_passenger_app/features/manage_address/manage_address_screen.dart';
 import 'package:taxi_passenger_app/features/navigateyour_ride/naviagate_your_ride_screen.dart';
 import 'package:taxi_passenger_app/features/navigation/navigation_screen.dart';
@@ -37,8 +38,9 @@ class MyApp extends StatelessWidget {
         theme: AppTheme.appTheme,
         debugShowCheckedModeBanner: false,
         title: 'Taxi_passenger_app',
-        initialRoute: '/',
+        // initialRoute: '/',
         getPages: appRoutes(),
+        home: HelpCenter(),
       ),
     );
   }

@@ -14,7 +14,7 @@ class HelpTextField extends StatelessWidget {
   final bool addBorder;
   final bool onlyEnglish;
   final double height;
-  final Icon? suffixIcon;
+  final Widget? suffixIcon;
 
   final String? Function(String?)? validator;
   final void Function(String?)? onchaged;
