@@ -3,14 +3,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:taxi_passenger_app/features/book_ride/book_ride_screen.dart';
+import 'package:taxi_passenger_app/features/address_selection/address_selection.dart';
+import 'package:taxi_passenger_app/features/arrived/arrived_screen.dart';
 import 'package:taxi_passenger_app/features/book_ride_2/book_for_self.dart';
+import 'package:taxi_passenger_app/features/destination/destination_screen.dart';
 import 'package:taxi_passenger_app/features/driver_arrived/driver_arrived_screen.dart';
+import 'package:taxi_passenger_app/features/home/car_image/car_image_screen.dart';
 import 'package:taxi_passenger_app/features/manage_address/manage_address_screen.dart';
 import 'package:taxi_passenger_app/features/navigateyour_ride/naviagate_your_ride_screen.dart';
 import 'package:taxi_passenger_app/features/navigation/navigation_screen.dart';
+import 'package:taxi_passenger_app/features/payment/pay_cash.dart';
+import 'package:taxi_passenger_app/features/payment_method/payment_method_screen.dart';
 import 'package:taxi_passenger_app/features/rate_driver/rate_driver_screen.dart';
-import 'package:taxi_passenger_app/features/ride/search_ride.dart';
+import 'package:taxi_passenger_app/features/ride/ride_confirmation.dart';
+import 'package:taxi_passenger_app/features/ride/ride_founded.dart';
+import 'package:taxi_passenger_app/features/ride/ride_founded2.dart';
 import 'package:taxi_passenger_app/features/sos/sos_screen.dart';
 import 'package:taxi_passenger_app/features/verify_code/verify_code_screen.dart';
 
@@ -38,8 +45,7 @@ class MyApp extends StatelessWidget {
         theme: AppTheme.appTheme,
         debugShowCheckedModeBanner: false,
         title: 'Taxi_passenger_app',
-        // initialRoute: '/',
-        home: BookforSelf(),
+        initialRoute: '/',
         getPages: appRoutes(),
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:taxi_passenger_app/utils/color/app_colors.dart';
@@ -39,7 +40,7 @@ class RegistartionScreen extends StatelessWidget {
                 ),
                 Text(
                   textAlign: TextAlign.center,
-                  "Don’t worry, only you can see your personal\ndata.No one eise will be able to see it",
+                  "Don’t worry, only you can see your personal\ndata.No one else will be able to see it",
                   style: Theme.of(context)
                       .textTheme
                       .bodySmall!
@@ -89,44 +90,7 @@ class RegistartionScreen extends StatelessWidget {
                     SizedBox(
                       height: 5.h,
                     ),
-                    Row(
-                      children: [
-                        Obx(
-                          () => Container(
-                            height: 49.h,
-                            width: 80.h,
-                            padding: const EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                                border: Border.all(
-                                    width: 1, color: AppColors.grey)),
-                            child: DropdownButtonHideUnderline(
-                              child: DropdownButton<String>(
-                                value: controller.dropdownValue.value,
-                                onChanged: (String? newValue) {
-                                  controller.setDropdownValue(newValue!);
-                                },
-                                items: <String>[
-                                  '+91',
-                                  '+1',
-                                  '+44',
-                                ].map((String value) {
-                                  return DropdownMenuItem<String>(
-                                    alignment: AlignmentDirectional.centerEnd,
-                                    value: value,
-                                    child: Text(value),
-                                  );
-                                }).toList(),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                            child: CustomTextFieldInt(
-                          controller: controller.phoneController,
-                          hint: 'Enter phone number',
-                        )),
-                      ],
-                    ),
+                    PhoneNumberField(controller: controller),
                     SizedBox(
                       height: 15.h,
                     ),
@@ -139,31 +103,40 @@ class RegistartionScreen extends StatelessWidget {
                       height: 5.h,
                     ),
                     Obx(
-                      () => Container(
+                          () => Container(
                         height: 48.h,
                         width: 500.h,
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                            border:
-                                Border.all(width: 1, color: AppColors.grey)),
+                          border: Border.all(width: 1, color: AppColors.grey),
+                        ),
                         child: DropdownButtonHideUnderline(
                           child: DropdownButton<String>(
-                            value: controller.genderdropdownValue.value,
+                            // Ensure the value is null if it's empty or hasn't been selected yet
+                            value: controller.genderdropdownValue.value.isEmpty ? null : controller.genderdropdownValue.value,
+                            // This will show "Select" when no value is selected (value is null)
+                            hint: Text("Select", style: TextStyle(
+                              fontFamily: "SF Pro Display",
+                              fontSize: 16,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.grey,  // Use a grey color to indicate placeholder text
+                            )),
                             onChanged: (String? newValue) {
-                              controller.setGenderDropdownValue(newValue!);
+                              // Only update the value if it's not null
+                              if (newValue != null) {
+                                controller.setGenderDropdownValue(newValue);
+                              }
                             },
-                            items:
-                                <String>['Male', 'Female'].map((String value) {
+                            items: <String>['Male', 'Female']
+                                .map((String value) {
                               return DropdownMenuItem<String>(
-                                alignment: AlignmentDirectional.center,
                                 value: value,
                                 child: Text(
                                   value,
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     fontFamily: "SF Pro Display",
                                     fontSize: 16,
                                     fontWeight: FontWeight.w400,
-                                    height: 1.275,
                                     color: Colors.black,
                                   ),
                                 ),
@@ -188,7 +161,7 @@ class RegistartionScreen extends StatelessWidget {
                     //   controller: controller.dobController,
                     //   hint: 'Enter DOB',
                     // ),
-                    CustomTextFieldInt(
+                    CustomTextField(
                       controller: controller.dobController,
                       hint: 'Enter DOB',
                     ),
@@ -196,6 +169,7 @@ class RegistartionScreen extends StatelessWidget {
                       height: 15.h,
                     ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Obx(
                           () => Checkbox(
@@ -211,11 +185,11 @@ class RegistartionScreen extends StatelessWidget {
                           child: RichText(
                             text: TextSpan(
                               text: 'By Accept, you agree to Company ',
-                              style: const TextStyle(color: Colors.black),
+                              style: const TextStyle(color: Colors.grey,decoration: TextDecoration.underline, decorationColor: Colors.grey,),
                               children: <TextSpan>[
                                 TextSpan(
                                   text: 'Terms & Conditions',
-                                  style: const TextStyle(color: Colors.blue),
+                                  style: const TextStyle(color: AppColors.primeryColor, decoration: TextDecoration.underline, decorationColor: AppColors.primeryColor,),
                                   recognizer: TapGestureRecognizer()
                                     ..onTap = () {
                                       // Open terms and conditions link
@@ -250,3 +224,76 @@ class RegistartionScreen extends StatelessWidget {
     );
   }
 }
+
+
+class PhoneNumberField extends StatefulWidget {
+  final RegistarationController controller;
+
+  const PhoneNumberField({Key? key, required this.controller})
+      : super(key: key);
+
+  @override
+  _PhoneNumberFieldState createState() => _PhoneNumberFieldState();
+}
+
+class _PhoneNumberFieldState extends State<PhoneNumberField> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 48,
+      decoration: BoxDecoration(
+        border: Border.all(color: AppColors.grey),
+      ),
+      child: Row(
+        children: <Widget>[
+          Obx(
+                () => Padding(
+              padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton<String>(
+                  value: widget.controller.dropdownValue.value,
+                  onChanged: (String? newValue) {
+                    widget.controller.setDropdownValue(newValue!);
+                  },
+                  items: <String>['+91', '+1', '+44'].map((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                ),
+              ),
+            ),
+          ),
+          VerticalDivider(
+            color: AppColors.grey,
+            thickness: 1,
+          ),
+          Expanded(
+            child: TextField(
+              controller: widget.controller.phoneController,
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                enabledBorder: InputBorder
+                    .none, // Ensures no border when enabled and not focused
+                focusedBorder: InputBorder.none,
+                disabledBorder: InputBorder.none,
+
+                hintText: 'Enter Phone Number',
+                hintStyle: const TextStyle(
+                  fontFamily: "SF Pro Display",
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                  height: 1.275,
+                  color: Colors.grey,
+                ),
+              ),
+              keyboardType: TextInputType.phone,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+

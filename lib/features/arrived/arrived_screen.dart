@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:taxi_passenger_app/features/home/widgets/custom_app_bar.dart';
 import 'package:taxi_passenger_app/utils/color/app_colors.dart';
@@ -15,7 +16,7 @@ class ArrivedScreen extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: TransparentAppBar(
         title: Text(
-          "Find Your Ride",
+          "Arrived at Destination",
           style: Theme.of(context).textTheme.displayMedium!.copyWith(
               height: 1.7, color: AppColors.primeryColor, fontSize: 20),
         ),
@@ -33,21 +34,6 @@ class ArrivedScreen extends StatelessWidget {
             ),
           ),
         ),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.only(right: 22, top: 10),
-            child: Column(
-              children: [
-                CustomPngImage(
-                  imageName: "assets/images/call_icon1.png",
-                  height: 40,
-                  width: 40,
-                  boxFit: BoxFit.contain,
-                ),
-              ],
-            ),
-          )
-        ],
       ),
       body: Stack(
         children: [
@@ -59,15 +45,32 @@ class ArrivedScreen extends StatelessWidget {
               boxFit: BoxFit.cover,
             ),
           ),
-          const Align(
+           const Align(
             alignment: Alignment.topRight,
             child: Padding(
-              padding: EdgeInsets.only(top: 80, right: 20),
-              child: CustomPngImage(
-                imageName: "assets/images/warning_icon1.png",
-                height: 40,
-                width: 40,
-                boxFit: BoxFit.contain,
+              padding: EdgeInsets.only(top: 60, right: 22),
+              child: Column(
+                children: [
+                  Column(
+                    children: [
+                      CustomPngImage(
+                        imageName: "assets/images/call_icon1.png",
+                        height: 40,
+                        width: 40,
+                        boxFit: BoxFit.contain,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 12,
+                  ),
+                  CustomPngImage(
+                    imageName: "assets/images/warning_icon1.png",
+                    height: 40,
+                    width: 40,
+                    boxFit: BoxFit.contain,
+                  ),
+                ],
               ),
             ),
           ),
@@ -76,39 +79,12 @@ class ArrivedScreen extends StatelessWidget {
             child: Column(
               children: [
                 CustomPngImage(
-                  height: 500,
+                  height: 800,
                   width: 200,
-                  imageName: 'assets/images/navigateride.png',
+                  imageName: 'assets/images/image copy.png',
                   boxFit: BoxFit.cover,
                 ),
-
-                // Padding(
-                //   padding: EdgeInsets.only(top: 120, right: 100),
-                //   child: CustomPngImage(
-                //     height: 30,
-                //     width: 15,
-                //     imageName: 'assets/images/car_icon.png',
-                //     boxFit: BoxFit.cover,
-                //   ),
-                // ),
-                // Padding(
-                //   padding: EdgeInsets.only(right: 65.0),
-                //   child: CustomPngImage(
-                //     height: 300,
-                //     width: 130,
-                //     imageName: 'assets/images/mappath1.png',
-                //     boxFit: BoxFit.cover,
-                //   ),
-                // ),
-                // Padding(
-                //   padding: EdgeInsets.only(bottom: 60, right: 120.0),
-                //   child: CustomPngImage(
-                //     height: 30,
-                //     width: 15,
-                //     imageName: 'assets/images/location_point.png',
-                //     boxFit: BoxFit.cover,
-                //   ),
-                // ),
+    
               ],
             ),
           ),
@@ -116,26 +92,7 @@ class ArrivedScreen extends StatelessWidget {
             alignment: Alignment.bottomCenter,
             child: _PayRequest(context),
           ),
-          Align(
-            alignment: Alignment.centerRight,
-            child: Padding(
-              padding: const EdgeInsets.only(top: 180.0, right: 16),
-              child: Container(
-                height: 45,
-                width: 45,
-                decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(30)),
-                    color: Colors.white),
-                child: const Center(
-                  child: CustomPngImage(
-                    width: 50,
-                    height: 50,
-                    imageName: 'assets/images/target_icon3.png',
-                  ),
-                ),
-              ),
-            ),
-          )
+          
         ],
       ),
     );
@@ -148,7 +105,7 @@ Widget _PayRequest(BuildContext context) {
     decoration: const BoxDecoration(
       color: Colors.white,
     ),
-    height: 220,
+    height: 256,
     child: Column(
       children: [
         const SizedBox(
@@ -189,7 +146,7 @@ Widget _PayRequest(BuildContext context) {
                 height: 25,
               ),
               SizedBox(
-                height: 40,
+                height: 44,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 5.0, right: 5.0),
                   child: CustomButton(

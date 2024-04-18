@@ -45,13 +45,12 @@ class PayCash extends StatelessWidget {
                   height: 80,
                 ),
                 const CircleAvatar(
-                  // Removed const
                   backgroundColor: AppColors.primeryColor,
-                  radius: 60,
-                  child: Icon(
-                    Icons.account_balance_wallet,
-                    size: 60,
-                    color: Colors.white,
+                  radius: 40,
+                  child:   CustomPngImage(
+                    imageName: "assets/images/wallet_white.png",
+                    height: 30,
+                    width: 30,
                   ),
                 ),
                 Text("Wallet",
@@ -129,12 +128,14 @@ class PayCash extends StatelessWidget {
                           color: AppColors.primeryColor,
                           width: 73,
                           height: 29,
-                          child: Text(
-                            ' 10 min trip ',
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleSmall!
-                                .copyWith(height: 1.7, color: AppColors.white),
+                          child: Center(
+                            child: Text(
+                              ' 10 min trip ',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleSmall!
+                                  .copyWith(height: 1.7, color: AppColors.white),
+                            ),
                           ),
                         ),
                       ),
@@ -147,52 +148,61 @@ class PayCash extends StatelessWidget {
                 ),
                 Stack(children: [
                   SizedBox(
-                    width: MediaQuery.of(context).size.width,
+                    width: MediaQuery.sizeOf(context).width,
                     child: Container(
                       color: AppColors.primeryColor,
-                      height: 80,
-                      width: 345,
+                      height: 94,
+                      width: 325,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment
+                            .center, // This aligns the row's children vertically
                         children: [
                           const Padding(
-                            // Removed const
-                            padding: EdgeInsets.only(left: 45.0),
-                            child: CircleAvatar(
-                              radius: 25,
-                              backgroundImage:
-                                  AssetImage("assets/images/propic.png"),
+                            padding: EdgeInsets.only(left: 43.0),
+                            child: SizedBox(
+                              width: 59,
+                              height: 59,
+                              child: CircleAvatar(
+                                radius: 40,
+                                backgroundImage: AssetImage(
+                                    "assets/images/jessica_image.png",
+                                  
+                                    ), // Using backgroundImage to fit the image
+                              ),
                             ),
                           ),
                           const SizedBox(
-                            // Removed const
-                            width: 20,
+                            width: 24,
                           ),
                           Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment
+                                .center, // Center the texts vertically
+                            crossAxisAlignment: CrossAxisAlignment
+                                .start, // Align the texts to the start (left side)
+                            mainAxisSize: MainAxisSize
+                                .min, // Use the minimum space needed by the children
                             children: [
                               Text(
                                 "Jessica",
                                 style: Theme.of(context)
                                     .textTheme
-                                    .headlineSmall!
+                                    .headlineMedium!
                                     .copyWith(
                                       color: AppColors.white,
-                                      fontSize: 18,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.bold,
                                     ),
                               ),
+                              SizedBox(height: 7,),
                               Text(
                                 "Cash payment",
                                 style: Theme.of(context)
                                     .textTheme
-                                    .displaySmall!
+                                    .labelMedium!
                                     .copyWith(
-                                      color: AppColors.white,
-                                      fontSize: 9,
-                                    ),
+                                        color: AppColors.white,
+                                        fontWeight: FontWeight.w300),
                               ),
                             ],
                           ),
@@ -201,28 +211,28 @@ class PayCash extends StatelessWidget {
                     ),
                   ),
                   const Positioned(
-                    // Removed const
-                    left: -20,
-                    top: 20,
+                    left: -14,
+                    top: 38,
                     child: CircleAvatar(
                       backgroundColor: AppColors.white,
+                      radius: 13.5,
                     ),
                   ),
                   const Positioned(
-                    // Removed const
-                    right: -20,
-                    top: 20,
+                    right: -14,
+                    top: 38,
                     child: CircleAvatar(
                       backgroundColor: AppColors.white,
+                      radius: 13.5,
                     ),
                   )
                 ]),
                 const SizedBox(
                   // Removed const
-                  height: 15,
+                  height: 14,
                 ),
                 Container(
-                  height: 40,
+                  height: 44,
                   width: 370,
                   color: AppColors.primeryColor,
                   child: Row(
@@ -239,7 +249,7 @@ class PayCash extends StatelessWidget {
                               .copyWith(
                                   height: 1.7,
                                   color: AppColors.white,
-                                  fontSize: 14),
+                                  fontSize: 17),
                         ),
                       ),
                       Padding(
@@ -253,7 +263,7 @@ class PayCash extends StatelessWidget {
                               .copyWith(
                                   height: 1.7,
                                   color: AppColors.white,
-                                  fontSize: 14),
+                                  fontSize: 17),
                         ),
                       ),
                     ],

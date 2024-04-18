@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:taxi_passenger_app/features/Ride/ride_flow_static.dart';
-import 'package:taxi_passenger_app/features/ride/ride_founded.dart';
 import '../../utils/color/app_colors.dart';
 import '../../widgets/custom_app_bar.dart';
 import '../../widgets/custom_button.dart';
@@ -19,9 +17,9 @@ class RideConfirmationPage extends StatelessWidget {
         preferredSize: Size.fromHeight(80.0),
         child: Column(
           children: [
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             CustomAppBar(
-              title: Text(
+              title: const Text(
                 "",
               ),
               leading: const Padding(
@@ -65,18 +63,18 @@ class RideConfirmationPage extends StatelessWidget {
                         .textTheme
                         .headlineMedium!
                         .copyWith(height: 1.7, color: AppColors.primeryColor)),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 Text("Your ride booked successfully,",
                     style: Theme.of(context)
                         .textTheme
-                        .titleSmall!
+                        .bodyMedium!
                         .copyWith(height: 1.7, color: AppColors.primeryColor)),
-                Text("You can check your booking on the Bookings.",
+                Text("You can check your booking on the \"Bookings\".",
                     style: Theme.of(context)
                         .textTheme
-                        .titleSmall!
+                        .bodyMedium!
                         .copyWith(height: 1.7, color: AppColors.primeryColor)),
                 const SizedBox(
                   height: 140,
@@ -94,7 +92,7 @@ class RideConfirmationPage extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {
-                    Get.to(() => RideFlowStatic());
+                    Get.to(() => const RideFlowStatic());
                   },
                   child: Text(
                     "Track Order",
