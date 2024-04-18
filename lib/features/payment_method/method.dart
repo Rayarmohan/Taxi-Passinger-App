@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:taxi_passenger_app/utils/color/app_colors.dart';
 import 'package:taxi_passenger_app/widgets/custom_images.dart';
 
@@ -29,36 +30,38 @@ class Method extends StatelessWidget {
           color: Color.fromRGBO(241, 241, 241, 1),
         ),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            children: [
-              Container(
-                  height: 30,
-                  width: 30,
-                  child: CustomPngImage(
-                    imageName: logo ?? 'assets/images/wallet_logo.png',
-                    boxFit: BoxFit.contain,
-                  )),
-              SizedBox(width: 10),
-              Text(
-                text,
-                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                    height: 1.7,
-                    color: AppColors
-                        .primeryColor, // Ensure color name matches your declaration
-                    fontWeight: FontWeight.w500),
-              ),
-            ],
-          ),
-          Radio<int>(
-            activeColor: AppColors.primeryColor,
-            value: singleValue,
-            groupValue: groupValue,
-            onChanged: onChanged,
-          ),
-        ],
+      child: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                Container(
+                    height: 30,
+                    width: 30,
+                    child: CustomPngImage(
+                      imageName: logo ?? 'assets/images/wallet_logo.png',
+                      boxFit: BoxFit.contain,
+                    )),
+                SizedBox(width: 10),
+                Text(
+                  text,
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                      height: 1.7,
+                      color: AppColors
+                          .primeryColor, // Ensure color name matches your declaration
+                      fontWeight: FontWeight.w500),
+                ),
+              ],
+            ),
+            Radio<int>(
+              activeColor: AppColors.primeryColor,
+              value: singleValue,
+              groupValue: groupValue,
+              onChanged: onChanged,
+            ),
+          ],
+        ),
       ),
     );
   }

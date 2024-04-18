@@ -130,9 +130,13 @@ class _PaymentMethodState extends State<PaymentMethod> {
                         ),
                       ],
                     ),
-                    const Icon(
-                      Icons.arrow_forward_ios,
-                      color: AppColors.primeryColor,
+                    Padding(
+                      padding: const EdgeInsets.only(right: 12),
+                      child: const Icon(
+                        Icons.arrow_forward_ios,
+                        color: AppColors.primeryColor,
+                        size: 14,
+                      ),
                     ),
                   ],
                 ),
