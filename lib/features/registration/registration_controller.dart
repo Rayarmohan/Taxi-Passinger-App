@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 class RegistarationController extends GetxController {
   var dropdownValue = '+91'.obs;
-  var genderdropdownValue = 'Male'.obs;
+  RxString genderdropdownValue = RxString('');
   var citydropdownValue = 'Kochi'.obs;
   var isChecked = false.obs;
 
