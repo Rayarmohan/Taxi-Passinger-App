@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:taxi_passenger_app/features/chat/chat.dart';
-import 'package:taxi_passenger_app/features/ride/ride_founded2.dart';
 
 import '../../utils/color/app_colors.dart';
-import '../../widgets/custom_app_bar.dart';
 import '../../widgets/custom_button.dart';
 import '../../widgets/custom_images.dart';
 
@@ -127,7 +124,7 @@ class RideFounded extends StatelessWidget {
                               .textTheme
                               .titleSmall!
                               .copyWith(
-                                  color: Colors.grey,
+                                  color: AppColors.primeryColor,
                                   fontWeight: FontWeight.w300,
                                   fontSize: 14)),
                     ],
@@ -181,14 +178,10 @@ class RideFounded extends StatelessWidget {
                         },
                         child: Container(
                           padding: const EdgeInsets.all(8.0),
-                          decoration: const BoxDecoration(
-                            color: AppColors.primeryColor,
-                            shape: BoxShape.circle,
-                          ),
-                          child: const Icon(
-                            Icons.message_rounded,
-                            color: Colors.white,
-                            size: 24,
+                          child: const CustomPngImage(
+                            imageName: "assets/images/circular_message.png",
+                            height: 41,
+                            width: 41,
                           ),
                         ),
                       ),
@@ -197,14 +190,10 @@ class RideFounded extends StatelessWidget {
                       ),
                       Container(
                         padding: const EdgeInsets.all(8.0),
-                        decoration: const BoxDecoration(
-                          color: Colors.green,
-                          shape: BoxShape.circle,
-                        ),
-                        child: const Icon(
-                          Icons.phone,
-                          color: Colors.white,
-                          size: 24,
+                        child: const CustomPngImage(
+                          imageName: "assets/images/circular_phone.png",
+                          height: 41,
+                          width: 41,
                         ),
                       ),
                     ],
@@ -213,43 +202,41 @@ class RideFounded extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const SizedBox(width: 8),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                          Text("Rate Per",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodySmall!
+                                  .copyWith(
+                                      color: AppColors.primeryColor,
+                                      fontSize: 14.0,
+                                      fontWeight: FontWeight.w400)),
+                          SizedBox(
+                            height: 8.h,
+                          ),
+                          Row(
                             children: [
-                              Text("Rate per",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyMedium!
-                                      .copyWith(
-                                        color: AppColors.primeryColor,
-                                        fontSize: 15,
-                                      )),
+                              const CustomPngImage(
+                                imageName: "assets/images/wallet.png",
+                                height: 20,
+                                width: 20,
+                                boxFit: BoxFit.contain,
+                              ),
                               const SizedBox(
-                                height: 5,
+                                width: 8,
                               ),
-                              Row(
-                                children: [
-                                  Image.asset(
-                                    'assets/images/walletnew.png', // Replace with your actual image path
-                                    width:
-                                        24, // Set the width to fit your design
-                                    height:
-                                        24, // Set the height to fit your design
-                                    color: AppColors
-                                        .primeryColor, // Optional: Apply a color filter if needed
-                                  ),
-                                  Text("Rs 120.5",
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .bodyMedium!
-                                          .copyWith(
-                                              color: Colors.black,
-                                              fontSize: 12)),
-                                ],
-                              ),
+                              Text(
+                                "Rs. 120.5",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .labelMedium!
+                                    .copyWith(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w600,
+                                        color: AppColors.primeryColor),
+                              )
                             ],
                           ),
                         ],
@@ -260,40 +247,52 @@ class RideFounded extends StatelessWidget {
                           Text("Car Number",
                               style: Theme.of(context)
                                   .textTheme
-                                  .bodyMedium!
+                                  .bodySmall!
                                   .copyWith(
                                       color: AppColors.primeryColor,
-                                      fontSize: 15)),
-                          const SizedBox(
-                            height: 5,
+                                      fontSize: 14.0,
+                                      fontWeight: FontWeight.w400)),
+                          SizedBox(
+                            height: 8.h,
                           ),
-                          Text("GR-56-6788",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(color: Colors.black, fontSize: 12)),
+                          Text(
+                            "GR-56-6788",
+                            style: Theme.of(context)
+                                .textTheme
+                                .labelMedium!
+                                .copyWith(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                    color: AppColors.primeryColor),
+                          ),
                         ],
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("No. of seats",
+                          Text("No. of Seats",
                               style: Theme.of(context)
                                   .textTheme
-                                  .bodyMedium!
+                                  .bodySmall!
                                   .copyWith(
                                       color: AppColors.primeryColor,
-                                      fontSize: 15)),
-                          const SizedBox(
-                            height: 5,
+                                      fontSize: 14.0,
+                                      fontWeight: FontWeight.w400)),
+                          SizedBox(
+                            height: 8.h,
                           ),
-                          Text("4 seats",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyMedium!
-                                  .copyWith(color: Colors.black, fontSize: 12)),
+                          Text(
+                            "4 Seats",
+                            style: Theme.of(context)
+                                .textTheme
+                                .labelMedium!
+                                .copyWith(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w600,
+                                    color: AppColors.primeryColor),
+                          ),
                         ],
-                      ),
+                      )
                     ],
                   ),
                   const SizedBox(height: 25),
