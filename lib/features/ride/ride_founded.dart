@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:taxi_passenger_app/features/chat/chat.dart';
+import 'package:taxi_passenger_app/features/driver_arrived/widgets/custom_app_driver.dart';
 
 import '../../utils/color/app_colors.dart';
 import '../../widgets/custom_button.dart';
@@ -18,34 +19,41 @@ class RideFounded extends StatelessWidget {
 
     return Scaffold(
       extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Container(
-              height: 20,
-              width: 20,
-              decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(30))),
-              child: const Center(
-                child: Padding(
-                  padding: EdgeInsets.only(left: 6),
-                  child: Icon(
-                    Icons.arrow_back_ios,
-                    size: 18,
-                    color: AppColors.primeryColor,
-                  ),
-                ),
-              )),
+      appBar: CustomAppBarDriver(
+        title: Text(
+          "Ride Founded",
+          style: Theme.of(context).textTheme.displayMedium!.copyWith(
+              height: 1.7, color: AppColors.primeryColor, fontSize: 20),
         ),
-        centerTitle: true,
-        title: Text('Ride Founded',
-            style: Theme.of(context)
-                .textTheme
-                .bodyLarge!
-                .copyWith(color: AppColors.primeryColor)),
+        leading: Padding(
+          padding: EdgeInsets.only(top: 10, left: 20),
+          child: InkWell(
+            onTap: () {
+              Get.back();
+            },
+            child: CustomPngImage(
+              imageName: "assets/images/arrow_back.png",
+              height: 50,
+              width: 50,
+              boxFit: BoxFit.contain,
+            ),
+          ),
+        ),
+        actions: const [
+          Padding(
+            padding: EdgeInsets.only(right: 22, top: 10),
+            child: Column(
+              children: [
+                CustomPngImage(
+                  imageName: "assets/images/call_icon1.png",
+                  height: 40,
+                  width: 40,
+                  boxFit: BoxFit.contain,
+                ),
+              ],
+            ),
+          )
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -61,46 +69,28 @@ class RideFounded extends StatelessWidget {
                     boxFit: BoxFit.cover,
                   ),
                 ),
-                const Positioned(
-                  right: 10,
-                  bottom: 10,
+                Align(
+                  alignment: Alignment.topRight,
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 90, right: 20),
+                    child: CustomPngImage(
+                      imageName: "assets/images/warning_icon1.png",
+                      height: 40,
+                      width: 40,
+                      boxFit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+                Positioned(
+                  top: MediaQuery.of(context).size.height *
+                      0.47, // Adjust the value as needed
+                  right: 20,
+
                   child: CustomPngImage(
-                    imageName: "assets/images/gps.png",
+                    imageName: "assets/images/currentlocayion.png",
                     height: 50,
                     width: 50,
                     boxFit: BoxFit.contain,
-                  ),
-                ),
-                Positioned(
-                  right: 10,
-                  top: 33,
-                  child: Container(
-                    padding: const EdgeInsets.all(8.0),
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.circle,
-                    ),
-                    child: const Icon(
-                      Icons.call,
-                      color: AppColors.primeryColor,
-                      size: 24,
-                    ),
-                  ),
-                ),
-                Positioned(
-                  right: 10,
-                  top: 80,
-                  child: Container(
-                    padding: const EdgeInsets.all(8.0),
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.circle,
-                    ),
-                    child: const Icon(
-                      Icons.warning_amber_rounded,
-                      color: AppColors.primeryColor,
-                      size: 29,
-                    ),
                   ),
                 ),
               ],
