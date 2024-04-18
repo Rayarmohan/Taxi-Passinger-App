@@ -25,7 +25,7 @@ class RideFounded2 extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: CustomAppBarDriver(
         title: Text(
-          "Ride Founded",
+          "Customer Location",
           style: Theme.of(context).textTheme.displayMedium!.copyWith(
               height: 1.7, color: AppColors.primeryColor, fontSize: 20),
         ),
