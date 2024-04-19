@@ -4,6 +4,10 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:taxi_passenger_app/features/book_ride/transparent_app_bar.dart';
 import 'package:taxi_passenger_app/features/book_ride/vehicle.dart';
+import 'package:taxi_passenger_app/features/booking_pages/prebooking_tab.dart';
+import 'package:taxi_passenger_app/features/coupon/coupon_screen.dart';
+import 'package:taxi_passenger_app/features/coupon/widget/coupon_card.dart';
+import 'package:taxi_passenger_app/features/home/car_image/car_image_screen.dart';
 import 'package:taxi_passenger_app/utils/color/app_colors.dart';
 import 'package:taxi_passenger_app/utils/route/route_name.dart';
 import 'package:taxi_passenger_app/widgets/custom_app_bar.dart';
@@ -106,7 +110,8 @@ class _BookRideState extends State<BookRide> {
                                               'assets/images/dottedline.png'),
                                         ),
                                         const CustomPngImage(
-                                          imageName: 'assets/images/location_icon.png',
+                                          imageName:
+                                              'assets/images/location_icon.png',
                                           boxFit: BoxFit.cover,
                                           height: 20,
                                           width: 15.14,
@@ -208,7 +213,7 @@ class _BookRideState extends State<BookRide> {
                                     const Icon(
                                       Icons.access_time_filled_rounded,
                                       color: AppColors.primeryColor,
-                                      size:25,
+                                      size: 25,
                                     ),
                                     const SizedBox(width: 30),
                                     Text(
@@ -227,7 +232,6 @@ class _BookRideState extends State<BookRide> {
                                   Icons.arrow_forward_ios,
                                   color: AppColors.primeryColor,
                                   size: 18,
-                                  
                                 ),
                               ],
                             ),
@@ -240,17 +244,15 @@ class _BookRideState extends State<BookRide> {
                             child: Container(
                               height: 115,
                               child: ListView.builder(
+                                  padding: EdgeInsets.symmetric(horizontal: 20),
                                   scrollDirection: Axis.horizontal,
                                   itemCount: 3,
                                   itemBuilder: (context, index) {
-                                    return Row(
-                                      children: [
-                                        const SizedBox(
-                                          width: 40,
-                                        ),
-                                        VehicleInfo(index: index),
-                                      ],
-                                    );
+                                    return GestureDetector(
+                                        onTap: () {
+                                          Get.to(CarImageScreen());
+                                        },
+                                        child: VehicleInfo(index: index));
                                   }),
                             ),
                           ),
@@ -258,7 +260,9 @@ class _BookRideState extends State<BookRide> {
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 27, vertical: 5),
                             child: GestureDetector(
-                              onTap: () {},
+                              onTap: () {
+                                Get.to(PrebookingComplete());
+                              },
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
@@ -291,7 +295,7 @@ class _BookRideState extends State<BookRide> {
                                   const Icon(
                                     Icons.arrow_forward_ios,
                                     color: AppColors.primeryColor,
-                                     size: 18,
+                                    size: 18,
                                   ),
                                 ],
                               ),
@@ -332,7 +336,7 @@ class _BookRideState extends State<BookRide> {
                                   const Icon(
                                     Icons.arrow_forward_ios,
                                     color: AppColors.primeryColor,
-                                     size: 18,
+                                    size: 18,
                                   ),
                                 ],
                               ),
@@ -344,38 +348,44 @@ class _BookRideState extends State<BookRide> {
                           Padding(
                             padding: const EdgeInsets.symmetric(
                                 horizontal: 27, vertical: 5),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Row(
-                                  children: [
-                                    Container(
-                                        height: 30,
-                                        width: 30,
-                                        child: const CustomPngImage(
-                                          imageName:
-                                              'assets/images/promoicon.png',
-                                          boxFit: BoxFit.fill,
-                                        )),
-                                    const SizedBox(width: 30),
-                                    Text(
-                                      'Apply Promo',
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .bodyMedium!
-                                          .copyWith(
-                                            height: 1.7,
-                                            color: AppColors.black,
-                                          ),
-                                    ),
-                                  ],
-                                ),
-                                const Icon(
-                                  Icons.arrow_forward_ios,
-                                  color: AppColors.primeryColor,
-                                   size: 18,
-                                ),
-                              ],
+                            child: GestureDetector(
+                              onTap: () {
+                                Get.to(const CouponScreen());
+                              },
+                              child: Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                          height: 30,
+                                          width: 30,
+                                          child: const CustomPngImage(
+                                            imageName:
+                                                'assets/images/promoicon.png',
+                                            boxFit: BoxFit.fill,
+                                          )),
+                                      const SizedBox(width: 30),
+                                      Text(
+                                        'Apply Promo',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodyMedium!
+                                            .copyWith(
+                                              height: 1.7,
+                                              color: AppColors.black,
+                                            ),
+                                      ),
+                                    ],
+                                  ),
+                                  const Icon(
+                                    Icons.arrow_forward_ios,
+                                    color: AppColors.primeryColor,
+                                    size: 18,
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                           const Divider(

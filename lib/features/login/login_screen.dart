@@ -63,26 +63,34 @@ class LoginScreen extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 20),
-                    child: RichText(
-                        text: TextSpan(children: [
-                      TextSpan(
-                          text: "Don’t have an account? ",
+                    child: GestureDetector(
+                      onTap: () {
+                        Get.toNamed(AppRoute.registration);
+                      },
+                      child: RichText(
+                          text: TextSpan(children: [
+                        TextSpan(
+                            text: "Don’t have an account? ",
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium!
+                                .copyWith(
+                                    decoration: TextDecoration.underline,
+                                    height: 1.7,
+                                    color: AppColors.grey)),
+                        TextSpan(
+                          text: "Sign Up",
                           style: Theme.of(context)
                               .textTheme
                               .bodyMedium!
                               .copyWith(
+                                  decorationColor: AppColors.primeryColor,
                                   decoration: TextDecoration.underline,
                                   height: 1.7,
-                                  color: AppColors.grey)),
-                      TextSpan(
-                        text: "Sign Up",
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            decorationColor: AppColors.primeryColor,
-                            decoration: TextDecoration.underline,
-                            height: 1.7,
-                            color: AppColors.primeryColor),
-                      ),
-                    ])),
+                                  color: AppColors.primeryColor),
+                        ),
+                      ])),
+                    ),
                   )
                 ],
               ),

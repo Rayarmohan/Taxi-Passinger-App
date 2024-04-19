@@ -1,8 +1,12 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:taxi_passenger_app/features/chat/chat.dart';
 import 'package:taxi_passenger_app/features/driver_arrived/widgets/custom_app_driver.dart';
+import 'package:taxi_passenger_app/features/driver_details/driver_details_screen.dart';
+import 'package:taxi_passenger_app/features/sos/sos_screen.dart';
+import 'package:taxi_passenger_app/utils/route/route_name.dart';
 
 import '../../utils/color/app_colors.dart';
 import '../../widgets/custom_button.dart';
@@ -26,12 +30,12 @@ class RideFounded extends StatelessWidget {
               height: 1.7, color: AppColors.primeryColor, fontSize: 20),
         ),
         leading: Padding(
-          padding: EdgeInsets.only(top: 10, left: 20),
+          padding: const EdgeInsets.only(top: 10, left: 20),
           child: InkWell(
             onTap: () {
               Get.back();
             },
-            child: CustomPngImage(
+            child: const CustomPngImage(
               imageName: "assets/images/arrow_back.png",
               height: 50,
               width: 50,
@@ -39,16 +43,21 @@ class RideFounded extends StatelessWidget {
             ),
           ),
         ),
-        actions: const [
+        actions: [
           Padding(
-            padding: EdgeInsets.only(right: 22, top: 10),
+            padding: const EdgeInsets.only(right: 22, top: 10),
             child: Column(
               children: [
-                CustomPngImage(
-                  imageName: "assets/images/call_icon1.png",
-                  height: 40,
-                  width: 40,
-                  boxFit: BoxFit.contain,
+                GestureDetector(
+                  onTap: () {
+                    Get.toNamed(AppRoute.sosScreens);
+                  },
+                  child: const CustomPngImage(
+                    imageName: "assets/images/call_icon1.png",
+                    height: 40,
+                    width: 40,
+                    boxFit: BoxFit.contain,
+                  ),
                 ),
               ],
             ),
@@ -69,10 +78,10 @@ class RideFounded extends StatelessWidget {
                     boxFit: BoxFit.cover,
                   ),
                 ),
-                Align(
+                const Align(
                   alignment: Alignment.topRight,
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 90, right: 20),
+                    padding: EdgeInsets.only(top: 90, right: 20),
                     child: CustomPngImage(
                       imageName: "assets/images/warning_icon1.png",
                       height: 40,
@@ -85,8 +94,8 @@ class RideFounded extends StatelessWidget {
                   top: MediaQuery.of(context).size.height *
                       0.47, // Adjust the value as needed
                   right: 20,
-      
-                  child: CustomPngImage(
+
+                  child: const CustomPngImage(
                     imageName: "assets/images/currentlocayion.png",
                     height: 50,
                     width: 50,
@@ -108,8 +117,7 @@ class RideFounded extends StatelessWidget {
                               .textTheme
                               .titleSmall!
                               .copyWith(
-                                  color: AppColors.primeryColor,
-                                  fontSize: 18)),
+                                  color: AppColors.primeryColor, fontSize: 18)),
                       Text("5 min away",
                           style: Theme.of(context)
                               .textTheme
@@ -136,10 +144,13 @@ class RideFounded extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      const CircleAvatar(
-                        backgroundImage:
-                            AssetImage("assets/images/josephdeo.png"),
-                        radius: 30,
+                      GestureDetector(
+                        onTap: () => Get.to(const DriverDetailsScreen()),
+                        child: const CircleAvatar(
+                          backgroundImage:
+                              AssetImage("assets/images/josephdeo.png"),
+                          radius: 30,
+                        ),
                       ),
                       const SizedBox(width: 8.0),
                       Expanded(
@@ -168,7 +179,7 @@ class RideFounded extends StatelessWidget {
                           Get.to(() => const ChatPage());
                         },
                         child: Container(
-                          padding: const EdgeInsets.all(8.0),
+                          padding: const EdgeInsets.all(10.0),
                           child: const CustomPngImage(
                             imageName: "assets/images/circular_message.png",
                             height: 41,
@@ -180,7 +191,7 @@ class RideFounded extends StatelessWidget {
                         width: 9,
                       ),
                       Container(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(10.0),
                         child: const CustomPngImage(
                           imageName: "assets/images/circular_phone.png",
                           height: 41,
@@ -290,7 +301,9 @@ class RideFounded extends StatelessWidget {
                   CustomButton(
                     height: 44,
                     width: 1.sw,
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed(AppRoute.cancelRideScreen);
+                    },
                     text: "Cancel Ride",
                     textColor: Colors.white,
                     color: AppColors.primeryColor,

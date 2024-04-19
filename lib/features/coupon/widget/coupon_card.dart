@@ -18,7 +18,7 @@ class CouponCard extends StatelessWidget {
     return Column(
       children: [
         Container(
-          height: 208,
+          height: 209,
           width: MediaQuery.of(context).size.width,
           decoration: BoxDecoration(
             border: Border.all(
@@ -37,12 +37,15 @@ class CouponCard extends StatelessWidget {
                     children: <Widget>[
                       Text(
                         welcomeText,
-                        style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                        style: Theme.of(context)
+                            .textTheme
+                            .headlineMedium!
+                            .copyWith(
                               color: Colors.black,
                               fontWeight: FontWeight.w400,
                             ),
                       ),
-                       Padding(
+                      Padding(
                         padding: const EdgeInsets.symmetric(vertical: 8.0),
                         child: Text(
                           unlockText,
@@ -66,7 +69,10 @@ class CouponCard extends StatelessWidget {
                           ),
                           Text(
                             "Get 50% OFF",
-                            style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                            style: Theme.of(context)
+                                .textTheme
+                                .headlineMedium!
+                                .copyWith(
                                   color: AppColors.primeryColor,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -93,7 +99,9 @@ class CouponCard extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(height: 10,)
+        const SizedBox(
+          height: 10,
+        )
       ],
     );
   }

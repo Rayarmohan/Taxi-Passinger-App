@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:taxi_passenger_app/features/home/widgets/custom_app_bar.dart';
+import 'package:taxi_passenger_app/features/sos/sos_screen.dart';
 import 'package:taxi_passenger_app/utils/color/app_colors.dart';
 import 'package:taxi_passenger_app/utils/route/route_name.dart';
 import 'package:taxi_passenger_app/widgets/custom_images.dart';
@@ -34,9 +36,7 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          actions: const [
-      
-          ],
+          actions: const [],
         ),
         body: Stack(
           children: [
@@ -48,29 +48,32 @@ class HomeScreen extends StatelessWidget {
                 boxFit: BoxFit.cover,
               ),
             ),
-            const Align(
+            Align(
               alignment: Alignment.topRight,
-              child: Padding(padding: EdgeInsets.only(top: 15, right: 15),
+              child: Padding(
+                padding: const EdgeInsets.only(top: 15, right: 15),
                 child: Column(
                   children: [
-                    Column(
-                      children: [
-                        CustomPngImage(
-                          imageName: "assets/images/call_icon1.png",
-                          height: 40,
-                          width: 40,
-                          boxFit: BoxFit.contain,
-                        ),
-                      ],
+                    InkWell(
+                      onTap: () {
+                        print("clicked");
+                      },
+                      child: CustomPngImage(
+                        imageName: "assets/images/call_icon1.png",
+                        height: 40,
+                        width: 40,
+                        boxFit: BoxFit.contain,
+                      ),
                     ),
-                    SizedBox(height: 10,),
-                    CustomPngImage(
-                                imageName: "assets/images/warning_icon1.png",
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const CustomPngImage(
+                      imageName: "assets/images/warning_icon1.png",
                       height: 40,
                       width: 40,
                       boxFit: BoxFit.contain,
                     ),
-      
                   ],
                 ),
               ),
@@ -109,8 +112,8 @@ Widget _listview() {
         scrollDirection: Axis.horizontal,
         itemCount: 3,
         itemBuilder: ((context, index) {
-          List<String> adata  = ["Swift","Sedan","SUV"];
-          List<String> price  = ["Rs. 108","Rs. 84","Rs. 105"];
+          List<String> adata = ["Swift", "Sedan", "SUV"];
+          List<String> price = ["Rs. 108", "Rs. 84", "Rs. 105"];
           return Stack(
             children: [
               GestureDetector(
@@ -154,7 +157,7 @@ Widget _listview() {
                             children: [
                               Padding(
                                 padding:
-                                const EdgeInsets.only(top: 5.0, left: 20),
+                                    const EdgeInsets.only(top: 5.0, left: 20),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
@@ -163,11 +166,10 @@ Widget _listview() {
                                             .textTheme
                                             .bodyLarge!
                                             .copyWith(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w500,
-                                            color:
-                                            AppColors.primeryColor)),
-                                    SizedBox(
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w500,
+                                                color: AppColors.primeryColor)),
+                                    const SizedBox(
                                       width: 35,
                                     ),
                                     Text(price[index],
@@ -175,10 +177,9 @@ Widget _listview() {
                                             .textTheme
                                             .bodyLarge!
                                             .copyWith(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.w700,
-                                            color:
-                                            AppColors.primeryColor)),
+                                                fontSize: 14,
+                                                fontWeight: FontWeight.w700,
+                                                color: AppColors.primeryColor)),
                                   ],
                                 ),
                               ),
@@ -192,11 +193,10 @@ Widget _listview() {
                                             .textTheme
                                             .bodyMedium!
                                             .copyWith(
-                                            height: 1.7,
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.w400,
-                                            color:
-                                            AppColors.primeryColor)),
+                                                height: 1.7,
+                                                fontSize: 12,
+                                                fontWeight: FontWeight.w400,
+                                                color: AppColors.primeryColor)),
                                   ],
                                 ),
                               )

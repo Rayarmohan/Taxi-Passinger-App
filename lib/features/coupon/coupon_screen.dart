@@ -27,7 +27,9 @@ class CouponScreen extends StatelessWidget {
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
           child: InkWell(
-            onTap: () {},
+            onTap: () {
+              Get.back();
+            },
             child: const CustomPngImage(
               imageName: "assets/images/arrow_back.png",
               height: 30,
@@ -52,7 +54,7 @@ class CouponScreen extends StatelessWidget {
               const SizedBox(height: 10),
               ListView(
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 children: const [
                   CouponCard(
                     welcomeText: "WELCOME200",
@@ -68,7 +70,9 @@ class CouponScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 20,),
+              const SizedBox(
+                height: 20,
+              ),
               Row(
                 children: [
                   Expanded(
@@ -79,7 +83,7 @@ class CouponScreen extends StatelessWidget {
                     ),
                   ),
                   CustomButton(
-                    height: 48,
+                    height: 44,
                     width: 1.sw * 0.3, // You can adjust the width as needed
                     onPressed: () {},
                     color: AppColors.kGreen,
@@ -93,7 +97,9 @@ class CouponScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 10,),
+              const SizedBox(
+                height: 10,
+              ),
               CustomButton(
                 height: 44,
                 width: 1.sw,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:taxi_passenger_app/features/saved_places/widgets/custom_searchbar.dart';
 import 'package:taxi_passenger_app/utils/color/app_colors.dart';
+import 'package:taxi_passenger_app/utils/route/route_name.dart';
 import 'package:taxi_passenger_app/widgets/custom_images.dart';
 
 class AddressSelection extends StatelessWidget {
@@ -134,92 +136,102 @@ class AddressSelection extends StatelessWidget {
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(10),
-                        child: Container(
-                          color: AppColors.primeryColor,
-                          height: 180,
-                          width: 150,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              const CustomPngImage(
-                                imageName: 'assets/images/location5.png',
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                'Destination',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyMedium!
-                                    .copyWith(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w400,
-                                        color: AppColors.white),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                'Enter Destination',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyMedium!
-                                    .copyWith(
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.w400,
-                                        color: AppColors.white),
-                              )
-                            ],
+                        child: GestureDetector(
+                          onTap: () {
+                            Get.toNamed(AppRoute.landingPage);
+                          },
+                          child: Container(
+                            color: AppColors.primeryColor,
+                            height: 180,
+                            width: 150,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                const CustomPngImage(
+                                  imageName: 'assets/images/location5.png',
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  'Destination',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyMedium!
+                                      .copyWith(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w400,
+                                          color: AppColors.white),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  'Enter Destination',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyMedium!
+                                      .copyWith(
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.w400,
+                                          color: AppColors.white),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(10),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              border: Border.all(
-                                width: 1,
-                                color: const Color.fromRGBO(241, 241, 241, 1),
-                              )),
-                          height: 180,
-                          width: 150,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              const CustomPngImage(
-                                imageName: 'assets/images/Office_icon.png',
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                'Office',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyMedium!
-                                    .copyWith(
-                                        fontSize: 15,
-                                        fontWeight: FontWeight.w400,
-                                        color: AppColors.primeryColor),
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                '35 Km Away',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyMedium!
-                                    .copyWith(
-                                        fontSize: 13,
-                                        fontWeight: FontWeight.w400,
-                                        color: AppColors.primeryColor),
-                              )
-                            ],
+                        child: GestureDetector(
+                          onTap: () {
+                            Get.toNamed(AppRoute.landingPage);
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                border: Border.all(
+                                  width: 1,
+                                  color: const Color.fromRGBO(241, 241, 241, 1),
+                                )),
+                            height: 180,
+                            width: 150,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                const CustomPngImage(
+                                  imageName: 'assets/images/Office_icon.png',
+                                ),
+                                const SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  'Office',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyMedium!
+                                      .copyWith(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w400,
+                                          color: AppColors.primeryColor),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  '35 Km Away',
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyMedium!
+                                      .copyWith(
+                                          fontSize: 13,
+                                          fontWeight: FontWeight.w400,
+                                          color: AppColors.primeryColor),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),

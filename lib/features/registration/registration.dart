@@ -103,32 +103,37 @@ class RegistartionScreen extends StatelessWidget {
                       height: 5.h,
                     ),
                     Obx(
-                          () => Container(
+                      () => Container(
                         height: 48.h,
                         width: 500.h,
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          border: Border.all(width: 1, color: AppColors.grey),
+                          border:
+                              Border.all(width: 1, color: AppColors.lightGrey),
                         ),
                         child: DropdownButtonHideUnderline(
                           child: DropdownButton<String>(
                             // Ensure the value is null if it's empty or hasn't been selected yet
-                            value: controller.genderdropdownValue.value.isEmpty ? null : controller.genderdropdownValue.value,
+                            value: controller.genderdropdownValue.value.isEmpty
+                                ? null
+                                : controller.genderdropdownValue.value,
                             // This will show "Select" when no value is selected (value is null)
-                            hint: Text("Select", style: TextStyle(
-                              fontFamily: "SF Pro Display",
-                              fontSize: 16,
-                              fontWeight: FontWeight.w400,
-                              color: Colors.grey,  // Use a grey color to indicate placeholder text
-                            )),
+                            hint: Text("Select",
+                                style: TextStyle(
+                                  fontFamily: "SF Pro Display",
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors
+                                      .grey, // Use a grey color to indicate placeholder text
+                                )),
                             onChanged: (String? newValue) {
                               // Only update the value if it's not null
                               if (newValue != null) {
                                 controller.setGenderDropdownValue(newValue);
                               }
                             },
-                            items: <String>['Male', 'Female']
-                                .map((String value) {
+                            items:
+                                <String>['Male', 'Female'].map((String value) {
                               return DropdownMenuItem<String>(
                                 value: value,
                                 child: Text(
@@ -185,11 +190,19 @@ class RegistartionScreen extends StatelessWidget {
                           child: RichText(
                             text: TextSpan(
                               text: 'By Accept, you agree to Company ',
-                              style: const TextStyle(color: Colors.grey,decoration: TextDecoration.underline, decorationColor: Colors.grey,),
+                              style: const TextStyle(
+                                color: Colors.grey,
+                                decoration: TextDecoration.underline,
+                                decorationColor: AppColors.lightGrey,
+                              ),
                               children: <TextSpan>[
                                 TextSpan(
                                   text: 'Terms & Conditions',
-                                  style: const TextStyle(color: AppColors.primeryColor, decoration: TextDecoration.underline, decorationColor: AppColors.primeryColor,),
+                                  style: const TextStyle(
+                                    color: AppColors.primeryColor,
+                                    decoration: TextDecoration.underline,
+                                    decorationColor: AppColors.primeryColor,
+                                  ),
                                   recognizer: TapGestureRecognizer()
                                     ..onTap = () {
                                       // Open terms and conditions link
@@ -209,7 +222,7 @@ class RegistartionScreen extends StatelessWidget {
                       width: 1.sw,
                       onPressed: () {
                         print("clicked");
-                        Get.toNamed(AppRoute.landingPage);
+                        Get.toNamed(AppRoute.otpscreen);
                       },
                       text: "Continue",
                       textColor: AppColors.white,
@@ -224,7 +237,6 @@ class RegistartionScreen extends StatelessWidget {
     );
   }
 }
-
 
 class PhoneNumberField extends StatefulWidget {
   final RegistarationController controller;
@@ -242,12 +254,12 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
     return Container(
       height: 48,
       decoration: BoxDecoration(
-        border: Border.all(color: AppColors.grey),
+        border: Border.all(color: AppColors.lightGrey),
       ),
       child: Row(
         children: <Widget>[
           Obx(
-                () => Padding(
+            () => Padding(
               padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
               child: DropdownButtonHideUnderline(
                 child: DropdownButton<String>(
@@ -266,7 +278,7 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
             ),
           ),
           VerticalDivider(
-            color: AppColors.grey,
+            color: AppColors.lightGrey,
             thickness: 1,
           ),
           Expanded(
@@ -296,4 +308,3 @@ class _PhoneNumberFieldState extends State<PhoneNumberField> {
     );
   }
 }
-

@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Taxi_passenger_app',
         // initialRoute: '/',
-        home: NotificationScreen(),
+        initialRoute: '/OnBoardScreen',
         getPages: appRoutes(),
       ),
     );

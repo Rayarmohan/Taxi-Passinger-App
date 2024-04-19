@@ -47,7 +47,7 @@ class ManageAddress extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                height: 370.h,
+                height: 380.h,
                 width: 1.sw,
                 decoration: BoxDecoration(
                   border: Border.all(
@@ -177,7 +177,6 @@ class ManageAddress extends StatelessWidget {
                 padding: const EdgeInsets.all(2),
                 child: DottedBorderContainer(
                   onUploadPressed: () {
-
                     Get.to(AddAddress());
                   },
                 ),

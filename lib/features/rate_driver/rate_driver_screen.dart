@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:taxi_passenger_app/features/navigation_bar/landing_page.dart';
 import 'package:taxi_passenger_app/utils/color/app_colors.dart';
+import 'package:taxi_passenger_app/utils/route/route_name.dart';
 import 'package:taxi_passenger_app/widgets/custom_app_bar.dart';
 import 'package:taxi_passenger_app/widgets/custom_button.dart';
 import 'package:taxi_passenger_app/widgets/custom_images.dart';
@@ -155,7 +156,7 @@ class RateDriverScreen extends StatelessWidget {
                     height: 44,
                     width: 1.sw,
                     onPressed: () {
-                      Get.to(const LandingPage());
+                      Get.toNamed(AppRoute.landingPage);
                     },
                     text: "Submit",
                     color: AppColors.primeryColor,

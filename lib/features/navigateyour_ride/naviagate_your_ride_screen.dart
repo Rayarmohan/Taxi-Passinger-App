@@ -81,7 +81,7 @@ class NavigateYourRide extends StatelessWidget {
             top: MediaQuery.of(context).size.height *
                 0.57, // Adjust the value as needed
             right: 20,
-    
+
             child: CustomPngImage(
               imageName: "assets/images/currentlocayion.png",
               height: 50,
@@ -116,52 +116,55 @@ class NavigateYourRide extends StatelessWidget {
   }
 
   Widget _PassangerRequest(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        color: Colors.white,
-      ),
-      height: 246.h,
-      child: Padding(
-        padding: const EdgeInsets.only(left: 30, right: 30, top: 15),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 20.h,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                CustomPngImage(
-                  height: 20.h,
-                  width: 20.h,
-                  imageName: 'assets/images/location_icon.png',
-                  boxFit: BoxFit.contain,
-                ),
-                SizedBox(
-                  width: 10.h,
-                ),
-                Text(
-                  "KwaZulu-Natal, Cape Town",
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400,
-                      color: AppColors.primeryColor),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 20.h,
-            ),
-            CustomButton(
-              height: 44,
-              width: 1.sw,
-              onPressed: () {},
-              text: "Cancel Ride",
-              color: AppColors.primeryColor,
-              textColor: AppColors.white,
-            )
-          ],
+    return Padding(
+      padding: const EdgeInsets.only(top: 90),
+      child: Container(
+        decoration: const BoxDecoration(
+          color: Colors.white,
+        ),
+        height: 246.h,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 30, right: 30, top: 15),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 20.h,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CustomPngImage(
+                    height: 20.h,
+                    width: 20.h,
+                    imageName: 'assets/images/location_icon.png',
+                    boxFit: BoxFit.contain,
+                  ),
+                  SizedBox(
+                    width: 10.h,
+                  ),
+                  Text(
+                    "KwaZulu-Natal, Cape Town",
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.primeryColor),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 40.h,
+              ),
+              CustomButton(
+                height: 44,
+                width: 1.sw,
+                onPressed: () {},
+                text: "Cancel Ride",
+                color: AppColors.primeryColor,
+                textColor: AppColors.white,
+              )
+            ],
+          ),
         ),
       ),
     );

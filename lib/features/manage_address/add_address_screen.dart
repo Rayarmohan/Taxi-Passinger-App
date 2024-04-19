@@ -82,187 +82,189 @@ class AddAddress extends StatelessWidget {
       ),
       height: 500.h,
       child: Padding(
-        padding: const EdgeInsets.only(right: 25, left: 25),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 20.h,
-            ),
-            Text(
-              "Save address as*",
-              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  color: AppColors.grey),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Container(
-                      height: 30,
-                      width: 57,
-                      decoration: BoxDecoration(
-                          color: AppColors.primeryColor,
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Text(
-                          "Home",
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyMedium!
-                              .copyWith(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w400,
-                                  color: AppColors.white),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    Container(
-                      height: 30,
-                      width: 58,
-                      decoration: BoxDecoration(
-                          color: Colors.black.withOpacity(0.1),
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Text(
-                          "Office",
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyMedium!
-                              .copyWith(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w400,
-                                  color: AppColors.black),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    Container(
-                      height: 30,
-                      width: 105,
-                      decoration: BoxDecoration(
-                          color: Colors.black.withOpacity(0.1),
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Text(
-                          "Parents Home",
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyMedium!
-                              .copyWith(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w400,
-                                  color: AppColors.black),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    Container(
-                      height: 30,
-                      width: 65,
-                      decoration: BoxDecoration(
-                          color: Colors.black.withOpacity(0.1),
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Center(
-                        child: Text(
-                          "Friends",
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyMedium!
-                              .copyWith(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w400,
-                                  color: AppColors.black),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Text(
-              "Complete Address",
-              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  color: AppColors.grey),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const AddressInputField(),
-            SizedBox(
-              height: 10.h,
-            ),
-            Text(
-              "Floor",
-              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  color: AppColors.grey),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            CustomTextField(
-              controller: controller.floorAddressCon,
-              hint: "Enter Floor",
-              height: 15,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Text(
-              "Landmark",
-              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400,
-                  color: AppColors.grey),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            CustomTextField(
-              controller: controller.landmarkAddressCon,
-              hint: "Enter Landmark",
-              height: 15,
-            ),
-            SizedBox(
-              height: 50.h,
-            ),
-            CustomButton(
-              height: 44,
-              width: 1.sw,
-              onPressed: () {},
-              color: AppColors.primeryColor,
-              textColor: AppColors.white,
-              child: Text(
-                "Save Address",
-                style: Theme.of(context)
-                    .textTheme
-                    .bodyMedium!
-                    .copyWith(color: AppColors.white, fontSize: 17),
+        padding: const EdgeInsets.only(right: 25, left: 25, bottom: 20),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 20.h,
               ),
-            ),
-          ],
+              Text(
+                "Save address as*",
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.grey),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: 30,
+                        width: 57,
+                        decoration: BoxDecoration(
+                            color: AppColors.primeryColor,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Center(
+                          child: Text(
+                            "Home",
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium!
+                                .copyWith(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                    color: AppColors.white),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Container(
+                        height: 30,
+                        width: 58,
+                        decoration: BoxDecoration(
+                            color: Colors.black.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Center(
+                          child: Text(
+                            "Office",
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium!
+                                .copyWith(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                    color: AppColors.black),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Container(
+                        height: 30,
+                        width: 105,
+                        decoration: BoxDecoration(
+                            color: Colors.black.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Center(
+                          child: Text(
+                            "Parents Home",
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium!
+                                .copyWith(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                    color: AppColors.black),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Container(
+                        height: 30,
+                        width: 65,
+                        decoration: BoxDecoration(
+                            color: Colors.black.withOpacity(0.1),
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Center(
+                          child: Text(
+                            "Friends",
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium!
+                                .copyWith(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                    color: AppColors.black),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Text(
+                "Complete Address",
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.grey),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const AddressInputField(),
+              SizedBox(
+                height: 10.h,
+              ),
+              Text(
+                "Floor",
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.grey),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              CustomTextField(
+                controller: controller.floorAddressCon,
+                hint: "Enter Floor",
+                height: 15,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Text(
+                "Landmark",
+                style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: AppColors.grey),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              CustomTextField(
+                controller: controller.landmarkAddressCon,
+                hint: "Enter Landmark",
+                height: 15,
+              ),
+              SizedBox(
+                height: 50.h,
+              ),
+              CustomButton(
+                height: 44,
+                width: 1.sw,
+                onPressed: () {},
+                color: AppColors.primeryColor,
+                textColor: AppColors.white,
+                child: Text(
+                  "Save Address",
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyMedium!
+                      .copyWith(color: AppColors.white, fontSize: 17),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

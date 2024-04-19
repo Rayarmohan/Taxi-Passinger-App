@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:taxi_passenger_app/features/payment/pay_cash.dart';
@@ -10,7 +11,6 @@ import '../../widgets/custom_button.dart';
 import '../../widgets/custom_images.dart';
 import '../../widgets/custom_text_field.dart';
 
-
 class AddCardPage extends StatefulWidget {
   @override
   _AddCardPageState createState() => _AddCardPageState();
@@ -19,7 +19,8 @@ class AddCardPage extends StatefulWidget {
 class _AddCardPageState extends State<AddCardPage> {
   bool _saveCard = false;
 
-  final TextEditingController _cardHolderNameController = TextEditingController();
+  final TextEditingController _cardHolderNameController =
+      TextEditingController();
   final TextEditingController _cardNumberController = TextEditingController();
   final TextEditingController _expiryDateController = TextEditingController();
   final TextEditingController _cvvController = TextEditingController();
@@ -35,9 +36,7 @@ class _AddCardPageState extends State<AddCardPage> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(80.0),
         child: Column(
@@ -49,12 +48,17 @@ class _AddCardPageState extends State<AddCardPage> {
                       .textTheme
                       .headlineMedium!
                       .copyWith(height: 1.7, color: AppColors.primeryColor)),
-              leading: const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: CustomPngImage(
-                  imageName: "assets/images/arrow_back.png",
-                  height: 30,
-                  width: 30,
+              leading: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: GestureDetector(
+                  onTap: () {
+                    Get.back();
+                  },
+                  child: const CustomPngImage(
+                    imageName: "assets/images/arrow_back.png",
+                    height: 30,
+                    width: 30,
+                  ),
                 ),
               ),
             ),
@@ -95,7 +99,6 @@ class _AddCardPageState extends State<AddCardPage> {
                 controller: TextEditingController(),
               ),
               SizedBox(height: 16),
-
               Row(
                 children: <Widget>[
                   Expanded(
@@ -117,7 +120,6 @@ class _AddCardPageState extends State<AddCardPage> {
                     ),
                   ),
                   SizedBox(width: 16),
-
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -132,7 +134,6 @@ class _AddCardPageState extends State<AddCardPage> {
                         CustomTextField(
                           hint: "",
                           controller: TextEditingController(),
-
                         ),
                       ],
                     ),
@@ -149,17 +150,17 @@ class _AddCardPageState extends State<AddCardPage> {
                         _saveCard = value!;
                       });
                     },
-                    activeColor: Color(0xFF0A2B4C),
+                    activeColor: const Color(0xFF0A2B4C),
                   ),
-                  Text("Save Card"),
+                  const Text("Save Card"),
                 ],
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               CustomButton(
                 text: "Add Card",
                 textColor: Colors.white,
                 onPressed: () {
-                  Get.to(() => PayCash()); // Use GetX navigation
+                  // Get.to(() => PayCash()); // Use GetX navigation
                   // Add your onPressed logic here
                 },
               ),

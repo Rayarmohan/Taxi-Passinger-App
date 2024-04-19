@@ -79,7 +79,7 @@ class OTPScreen extends StatelessWidget {
               height: 44,
               width: 1.sw,
               onPressed: () {
-                Get.toNamed(AppRoute.registration);
+                Get.toNamed(AppRoute.enableLocation);
               },
               text: "Sign In",
               color: AppColors.primeryColor,
@@ -101,7 +101,7 @@ class OTPScreen extends StatelessWidget {
         decoration: InputDecoration(
           counterText: "", // to hide the counter text below the TextField
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(width: 2, color: Colors.grey.shade300),
+            borderSide: const BorderSide(width: 2, color: AppColors.lightGrey),
             borderRadius: BorderRadius.circular(2),
           ),
           focusedBorder: OutlineInputBorder(

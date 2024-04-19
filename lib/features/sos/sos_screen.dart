@@ -1,5 +1,6 @@
 // ignore_for_file: non_constant_identifier_names, unnecessary_import
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -65,7 +66,7 @@ class SosScreen extends StatelessWidget {
                 children: [
                   Container(
                     height: 180,
-                    width: 170,
+                    width: 160,
                     decoration: BoxDecoration(
                         border:
                             Border.all(color: Colors.black.withOpacity(0.1))),
@@ -194,41 +195,51 @@ class SosScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    SizedBox(
-                      width: 182,
-                      height: 44,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.zero,
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SizedBox(
+                          width: 178,
+                          height: 44,
+                          child: ElevatedButton(
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                              shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.zero,
+                              ),
+                            ),
+                            child: Text('Cancel',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .copyWith(color: AppColors.white)),
                           ),
                         ),
-                        child: Text('Cancel',
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyMedium!
-                                .copyWith(color: AppColors.white)),
                       ),
                     ),
-                    SizedBox(
-                      width: 182,
-                      height: 44,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          _EmergencyBottomSheet(context);
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.green,
-                          shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.zero,
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: SizedBox(
+                          width: 178,
+                          height: 44,
+                          child: ElevatedButton(
+                            onPressed: () {
+                              _EmergencyBottomSheet(context);
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.green,
+                              shape: const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.zero,
+                              ),
+                            ),
+                            child: Text('Send Alert',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .copyWith(color: AppColors.white)),
                           ),
                         ),
-                        child: Text('Send Alert',
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyMedium!
-                                .copyWith(color: AppColors.white)),
                       ),
                     ),
                   ],
@@ -347,8 +358,10 @@ class SosScreen extends StatelessWidget {
                   textColor: AppColors.white,
                   child: Text(
                     "Add Emergency Contacts",
-                    style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        color: AppColors.white, fontSize: 17),
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyMedium!
+                        .copyWith(color: AppColors.white, fontSize: 17),
                   ),
                 ),
               )
