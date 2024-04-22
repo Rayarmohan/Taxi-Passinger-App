@@ -56,7 +56,14 @@ class _HelpCenterState extends State<HelpCenter> {
                   controller: controller.helpController,
                   hint: "Search",
                   suffixIcon:
-                      const Icon(Icons.search, color: AppColors.primeryColor),
+                      Padding(
+                        padding: const EdgeInsets.all(14.0),
+                        child: CustomPngImage(
+                          imageName: "assets/images/search_icon_1.png",
+                          height: 10,
+                          width: 0,
+                        ),
+                      ),
                 ),
                 const SizedBox(height: 30),
                 const Text(
