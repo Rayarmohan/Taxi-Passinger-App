@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:taxi_passenger_app/utils/color/app_colors.dart';
+import 'package:taxi_passenger_app/widgets/custom_images.dart';
 
 class NotificationContainer extends StatelessWidget {
-  const NotificationContainer({super.key});
+  final bool showBorder;
+  const NotificationContainer({super.key,this.showBorder = false,});
 
   @override
   Widget build(BuildContext context) {
@@ -10,13 +12,13 @@ class NotificationContainer extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
-          height: 110,
+          height: 97,
           width: MediaQuery.sizeOf(context).width,
           decoration: BoxDecoration(
-            border: Border.all(
+            border: showBorder ? Border.all(
               color: Colors.grey.withOpacity(0.2), // Border color
               width: 2, // Border width
-            ), // Optional: Use this to round the corners if needed
+            ) : null // Optional: Use this to round the corners if needed
           ),
           child: Column(
             children: [
@@ -34,22 +36,29 @@ class NotificationContainer extends StatelessWidget {
                 ),
               ),
               ListTile(
-                leading: const CircleAvatar(
-                  backgroundColor: AppColors.primeryColor,
-                  radius: 30,
-                  child: Icon(Icons.done,color: Colors.white),
+                leading: const CustomPngImage(
+                    imageName: "assets/images/check_icon.png",
+                    height: 36,
+                    width: 36,
+                    boxFit: BoxFit.contain,
+                  ),
+                title: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("Ride Request from Joshua",
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleLarge!
+                            .copyWith(height: 1.7, color: AppColors.primeryColor,fontSize: 14)),
+                            SizedBox(height: 4,)
+                  ],
                 ),
-                title: Text("Ride Request from Joshua",
-                    style: Theme.of(context)
-                        .textTheme
-                        .titleLarge!
-                        .copyWith(height: 1.7, color: AppColors.primeryColor)),
                 subtitle:  Text(
                   textAlign: TextAlign.justify,
                     "Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed",
                   style: Theme.of(context)
                       .textTheme
-                      .bodySmall!
+                      .bodyMedium!
                       .copyWith(
                     fontSize: 12,
                       fontWeight: FontWeight.w400,

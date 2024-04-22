@@ -80,9 +80,11 @@ class NotificationScreen extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: 3,
                 itemBuilder: (context, index) {
-                  return const Padding(
+                  return  Padding(
                     padding: const EdgeInsets.only(top:4.0,bottom: 4),
-                    child: const NotificationContainer(),
+                    child:  NotificationContainer(
+                      showBorder: index % 2 == 0,
+                    ),
                   );
                 },
               ),
@@ -94,7 +96,7 @@ class NotificationScreen extends StatelessWidget {
                       style: Theme.of(context)
                           .textTheme
                           .labelLarge!
-                          .copyWith(height: 1.7, color: AppColors.grey)),
+                          .copyWith(height: 1.7, color: AppColors.grey,fontSize: 14)),
                   GestureDetector(
                     onTap: () {
                       // Implement mark all as read functionality
@@ -103,7 +105,7 @@ class NotificationScreen extends StatelessWidget {
                         style: Theme.of(context)
                             .textTheme
                             .labelLarge!
-                            .copyWith(height: 1.7, color: AppColors.primeryColor)),
+                            .copyWith(height: 1.7, color: AppColors.primeryColor,fontSize: 14)),
                   )
                 ],
               ),
@@ -113,9 +115,11 @@ class NotificationScreen extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 itemCount: 2,
                 itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.only(top:4.0,bottom: 4),
-                    child: const NotificationContainer(),
+                  return  Padding(
+                    padding:  const EdgeInsets.only(top:4.0,bottom: 4),
+                    child:  NotificationContainer(
+                      showBorder: index % 2 == 0,
+                    ),
                   );
                 },
               ),
