@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:taxi_passenger_app/features/driver_details/driver_controller.dart';
 import 'package:taxi_passenger_app/features/driver_details/widget/about_tab.dart';
@@ -26,7 +28,9 @@ class DriverDetailsScreen extends StatelessWidget {
           leading: Padding(
             padding: const EdgeInsets.all(8.0),
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Get.back();
+              },
               child: const CustomPngImage(
                 imageName: "assets/images/arrow_back.png",
                 height: 30,
@@ -71,12 +75,15 @@ class DriverDetailsScreen extends StatelessWidget {
                         ),
                         Text(
                           "example@gmail.com",
-                          style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                              height: 1.7,
-                              color: AppColors.primeryColor,
-                              fontWeight: FontWeight.w400,
-                              fontSize:
-                                  14), // Replace with AppColors.primeryColor
+                          style: Theme.of(context)
+                              .textTheme
+                              .labelLarge!
+                              .copyWith(
+                                  height: 1.7,
+                                  color: AppColors.primeryColor,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize:
+                                      14), // Replace with AppColors.primeryColor
                         ),
                       ],
                     )
@@ -109,12 +116,15 @@ class DriverDetailsScreen extends StatelessWidget {
                         ),
                         Text(
                           "Customer",
-                          style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                              height: 1.7,
-                              color: AppColors.primeryColor,
-                              fontWeight: FontWeight.w400,
-                              fontSize:
-                                  12), // Replace with AppColors.primeryColor
+                          style: Theme.of(context)
+                              .textTheme
+                              .labelLarge!
+                              .copyWith(
+                                  height: 1.7,
+                                  color: AppColors.primeryColor,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize:
+                                      12), // Replace with AppColors.primeryColor
                         ),
                       ],
                     ),
@@ -136,12 +146,15 @@ class DriverDetailsScreen extends StatelessWidget {
                         ),
                         Text(
                           "Years Exp",
-                          style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                              height: 1.7,
-                              color: AppColors.primeryColor,
-                              fontWeight: FontWeight.w400,
-                              fontSize:
-                                  12), // Replace with AppColors.primeryColor
+                          style: Theme.of(context)
+                              .textTheme
+                              .labelLarge!
+                              .copyWith(
+                                  height: 1.7,
+                                  color: AppColors.primeryColor,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize:
+                                      12), // Replace with AppColors.primeryColor
                         ),
                       ],
                     ),
@@ -163,12 +176,15 @@ class DriverDetailsScreen extends StatelessWidget {
                         ),
                         Text(
                           "Rating",
-                          style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                              height: 1.7,
-                              color: AppColors.primeryColor,
-                              fontWeight: FontWeight.w400,
-                              fontSize:
-                                  12), // Replace with AppColors.primeryColor
+                          style: Theme.of(context)
+                              .textTheme
+                              .labelLarge!
+                              .copyWith(
+                                  height: 1.7,
+                                  color: AppColors.primeryColor,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize:
+                                      12), // Replace with AppColors.primeryColor
                         ),
                       ],
                     ),
@@ -190,12 +206,15 @@ class DriverDetailsScreen extends StatelessWidget {
                         ),
                         Text(
                           "Review",
-                          style: Theme.of(context).textTheme.labelLarge!.copyWith(
-                              height: 1.7,
-                              color: AppColors.primeryColor,
-                              fontWeight: FontWeight.w400,
-                              fontSize:
-                                  12), // Replace with AppColors.primeryColor
+                          style: Theme.of(context)
+                              .textTheme
+                              .labelLarge!
+                              .copyWith(
+                                  height: 1.7,
+                                  color: AppColors.primeryColor,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize:
+                                      12), // Replace with AppColors.primeryColor
                         ),
                       ],
                     )
@@ -227,13 +246,14 @@ class DriverDetailsScreen extends StatelessWidget {
                 ],
               ),
               Expanded(
-                  child:
-                      TabBarView(controller: controller.tabController, children: const  [
-                AboutTab(),
-          
-                // Review Tab
-                ReviewTab(),
-              ]))
+                  child: TabBarView(
+                      controller: controller.tabController,
+                      children: const [
+                    SingleChildScrollView(child: AboutTab()),
+
+                    // Review Tab
+                    SingleChildScrollView(child: ReviewTab()),
+                  ]))
             ],
           ),
         ));

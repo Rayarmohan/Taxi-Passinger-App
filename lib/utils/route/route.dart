@@ -1,10 +1,14 @@
 import 'package:get/get.dart';
 import 'package:taxi_passenger_app/features/Ride/search_ride.dart';
+import 'package:taxi_passenger_app/features/address_selection/address_selection.dart';
 import 'package:taxi_passenger_app/features/book_ride/book_ride_screen.dart';
 import 'package:taxi_passenger_app/features/book_ride_2/book_for_self.dart';
+import 'package:taxi_passenger_app/features/cancel_pages/cancel_ride.dart';
 import 'package:taxi_passenger_app/features/coupon/coupon_screen.dart';
+import 'package:taxi_passenger_app/features/destination/destination_screen.dart';
 import 'package:taxi_passenger_app/features/driver_details/driver_details_screen.dart';
 import 'package:taxi_passenger_app/features/chat/chat.dart';
+import 'package:taxi_passenger_app/features/enable_location/enable_location.dart';
 import 'package:taxi_passenger_app/features/home/home_screen.dart';
 import 'package:taxi_passenger_app/features/login/login_screen.dart';
 import 'package:taxi_passenger_app/features/navigation_bar/landing_page.dart';
@@ -20,6 +24,8 @@ import 'package:taxi_passenger_app/features/registration/registration.dart';
 import 'package:taxi_passenger_app/features/ride/ride_confirmation.dart';
 import 'package:taxi_passenger_app/features/ride/ride_founded.dart';
 import 'package:taxi_passenger_app/features/ride/ride_founded2.dart';
+import 'package:taxi_passenger_app/features/saved_places/saved_places.dart';
+import 'package:taxi_passenger_app/features/sos/sos_screen.dart';
 import 'package:taxi_passenger_app/utils/route/route_name.dart';
 
 appRoutes() => [
@@ -49,4 +55,18 @@ appRoutes() => [
       GetPage(name: AppRoute.searchRider, page: () => const SearchRide()),
       GetPage(name: AppRoute.paymentMethode, page: () => const PaymentMethod()),
       GetPage(name: AppRoute.landingPage, page: () => const LandingPage()),
+      GetPage(
+          name: AppRoute.enableLocation,
+          page: () => const EnableLocationScreen()),
+      GetPage(
+          name: AppRoute.addressSelection,
+          page: () => const AddressSelection()),
+      GetPage(name: AppRoute.savedPlaces, page: () => SavedPlacesScreen()),
+      GetPage(
+          name: AppRoute.destinationScreen,
+          page: () => const DestinationScreen()),
+      GetPage(name: AppRoute.sosScreens, page: () => const SosScreen()),
+      GetPage(
+          name: AppRoute.cancelRideScreen,
+          page: () => const CancelRideScreen()),
     ];

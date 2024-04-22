@@ -6,6 +6,8 @@ import 'package:taxi_passenger_app/features/booking_pages/booking_tab.dart';
 import 'package:taxi_passenger_app/features/booking_pages/pre_booking.dart';
 import 'package:taxi_passenger_app/features/help_center/help_center.dart';
 import 'package:taxi_passenger_app/features/home/car_image/car_image_screen.dart';
+import 'package:taxi_passenger_app/features/manage_address/manage_address_screen.dart';
+import 'package:taxi_passenger_app/features/payment/add_card.dart';
 import 'package:taxi_passenger_app/features/profile/editprofile_screen.dart';
 import 'package:taxi_passenger_app/features/profile/widgets/update_photo.dart';
 import 'package:taxi_passenger_app/features/profilesettings/profilesettings_screen.dart';
@@ -87,14 +89,38 @@ class ProfileScreen extends StatelessWidget {
               ),
               ListTile(
                 onTap: () {
-                  Get.to(BookingComplete());
+                  Get.to(ManageAddress());
                 },
                 leading: CustomPngImage(
                   imageName: "assets/images/sandtimer.png",
                   height: 20,
                   width: 20,
                 ),
-                title: Text("Your Rides",
+                title: Text("Manage address",
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.black)),
+                trailing: Icon(
+                  Icons.arrow_forward_ios,
+                  color: Colors.black,
+                  size: 15,
+                ),
+              ),
+              Divider(
+                height: 2,
+                color: Colors.black,
+              ),
+              ListTile(
+                onTap: () {
+                  Get.to(AddCardPage());
+                },
+                leading: CustomPngImage(
+                  imageName: "assets/images/your ride.png",
+                  height: 20,
+                  width: 20,
+                ),
+                title: Text("Payment Methods",
                     style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.normal,
@@ -151,28 +177,6 @@ class ProfileScreen extends StatelessWidget {
                     color: Colors.black,
                     size: 15,
                   ),
-                ),
-              ),
-              Divider(
-                height: 2,
-                color: Colors.black,
-              ),
-              ListTile(
-                onTap: () {},
-                leading: CustomPngImage(
-                  imageName: "assets/images/car4.png",
-                  height: 25,
-                  width: 25,
-                ),
-                title: Text("Cars",
-                    style: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.black)),
-                trailing: Icon(
-                  Icons.arrow_forward_ios,
-                  color: Colors.black,
-                  size: 15,
                 ),
               ),
               Divider(

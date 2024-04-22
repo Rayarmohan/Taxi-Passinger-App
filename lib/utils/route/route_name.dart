@@ -1,5 +1,5 @@
 class AppRoute {
-  static String onboard = '/';
+  static String onboard = '/OnBoardScreen';
   static String login = '/LoginScreen';
   static String otpscreen = '/OtpScreen';
   static String notification = '/NotificationScreen';
@@ -20,4 +20,10 @@ class AppRoute {
   static String searchRider = '/SearchRide';
   static String paymentMethode = '/PaymentMethod';
   static String landingPage = '/LandingPage';
+  static String enableLocation = '/EnableLocationScreen';
+  static String addressSelection = '/AddressSelection';
+  static String savedPlaces = '/SavedPlacesScreen';
+  static String destinationScreen = '/estinationScreen';
+  static String sosScreens = '/SosScreen';
+  static String cancelRideScreen = '/CancelRideScreen';
 }

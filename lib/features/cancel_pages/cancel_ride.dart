@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:taxi_passenger_app/features/cancel_pages/cancel_reason.dart';
 import 'package:taxi_passenger_app/features/cancel_pages/cancel_sucess.dart';
 import 'package:taxi_passenger_app/utils/color/app_colors.dart';
@@ -19,16 +21,22 @@ class CancelRideScreen extends StatelessWidget {
                   .textTheme
                   .headlineMedium!
                   .copyWith(height: 1.7, color: AppColors.primeryColor)),
-          leading: const Padding(
-            padding: EdgeInsets.all(8),
-            child: CustomPngImage(
-              imageName: "assets/images/arrow_back.png",
-              height: 30,
-              width: 30,
+          leading: Padding(
+            padding: const EdgeInsets.all(8),
+            child: GestureDetector(
+              onTap: () {
+                Get.back();
+              },
+              child: const CustomPngImage(
+                imageName: "assets/images/arrow_back.png",
+                height: 30,
+                width: 30,
+              ),
             ),
           ),
         ),
-        body: SingleChildScrollView( // Wrap with SingleChildScrollView
+        body: SingleChildScrollView(
+          // Wrap with SingleChildScrollView
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
             child: Column(
@@ -49,8 +57,9 @@ class CancelRideScreen extends StatelessWidget {
                                   .textTheme
                                   .bodyMedium!
                                   .copyWith(
-                                    fontWeight: FontWeight.w400,
-                                      color: AppColors.primeryColor, fontSize: 12),
+                                      fontWeight: FontWeight.w400,
+                                      color: AppColors.primeryColor,
+                                      fontSize: 12),
                             ),
                           ],
                         ),
@@ -83,7 +92,8 @@ class CancelRideScreen extends StatelessWidget {
                               borderSide: BorderSide(
                                   color: Colors
                                       .grey.shade300), // Light grey border
-                              borderRadius: BorderRadius.all(Radius.circular(20)), // Sharp edges
+                              borderRadius: BorderRadius.all(
+                                  Radius.circular(20)), // Sharp edges
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(

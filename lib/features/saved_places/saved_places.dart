@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:taxi_passenger_app/features/saved_places/widgets/custom_searchbar.dart';
 import 'package:taxi_passenger_app/utils/color/app_colors.dart';
+import 'package:taxi_passenger_app/utils/route/route_name.dart';
 import 'package:taxi_passenger_app/widgets/custom_app_bar.dart';
 import 'package:taxi_passenger_app/widgets/custom_button.dart';
 import 'package:taxi_passenger_app/widgets/custom_images.dart';
@@ -49,7 +51,7 @@ class _SavedPlacesScreenState extends State<SavedPlacesScreen> {
       ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.fromLTRB(30, 20, 30, 0),
+          padding: const EdgeInsets.fromLTRB(30, 20, 30, 30),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -111,7 +113,9 @@ class _SavedPlacesScreenState extends State<SavedPlacesScreen> {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 5.0, right: 5.0),
                   child: CustomButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.toNamed(AppRoute.destinationScreen);
+                    },
                     child: Text(
                       'Continue',
                       style: Theme.of(context)

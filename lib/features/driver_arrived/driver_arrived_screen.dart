@@ -112,146 +112,149 @@ class DriverArrived extends StatelessWidget {
   }
 
   Widget _PassangerRequest(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        color: Colors.white,
-      ),
-      height: 281.h,
-      child: Column(
-        children: [
-          SizedBox(
-            height: 20.h,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 25, right: 25),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Driver Is Arriving",
-                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w400,
-                      color: AppColors.primeryColor),
-                ),
-                Text(
-                  "5 Min away",
-                  style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400,
-                      color: AppColors.primeryColor),
-                ),
-              ],
+    return Padding(
+      padding: const EdgeInsets.only(top: 50),
+      child: Container(
+        decoration: const BoxDecoration(
+          color: Colors.white,
+        ),
+        height: 281.h,
+        child: Column(
+          children: [
+            SizedBox(
+              height: 20.h,
             ),
-          ),
-          SizedBox(
-            height: 20.h,
-          ),
-          const Divider(
-            thickness: 0.8,
-          ),
-          const SizedBox(
-            height: 8,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          const CircleAvatar(
-                            radius: 30,
-                            child: CustomPngImage(
-                              height: 60,
-                              width: 60,
-                              imageName: 'assets/images/profilepic.png',
-                            ),
-                          ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Joseph Deo",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge!
-                                    .copyWith(
-                                        fontSize: 17,
-                                        fontWeight: FontWeight.w600,
-                                        color: AppColors.primeryColor),
-                              ),
-                              SizedBox(
-                                height: 6.h,
-                              ),
-                              Text(
-                                "Swift (4 Seater)",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyMedium!
-                                    .copyWith(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w400,
-                                        color: AppColors.primeryColor),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          Row(
-                            children: [
-                              CustomPngImage(
-                                imageName: "assets/images/wallet.png",
-                                height: 20,
-                                width: 20,
-                                boxFit: BoxFit.contain,
-                              ),
-                              SizedBox(
-                                width: 8,
-                              ),
-                              Text(
-                                "Rs. 120.5",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyMedium!
-                                    .copyWith(
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w500,
-                                        color: AppColors.primeryColor),
-                              )
-                            ],
-                          ),
-                          SizedBox(
-                            height: 8.h,
-                          ),
-                          Text(
-                            "GR-56-6788",
-                            style: Theme.of(context)
-                                .textTheme
-                                .bodyMedium!
-                                .copyWith(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w500,
-                                    color: AppColors.primeryColor),
-                          )
-                        ],
-                      ),
-                    ],
+            Padding(
+              padding: const EdgeInsets.only(left: 25, right: 25),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Driver Is Arriving",
+                    style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.primeryColor),
                   ),
-                ),
-              ],
+                  Text(
+                    "5 Min away",
+                    style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        color: AppColors.primeryColor),
+                  ),
+                ],
+              ),
             ),
-          )
-        ],
+            SizedBox(
+              height: 20.h,
+            ),
+            const Divider(
+              thickness: 0.8,
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 10, right: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            const CircleAvatar(
+                              radius: 30,
+                              child: CustomPngImage(
+                                height: 60,
+                                width: 60,
+                                imageName: 'assets/images/profilepic.png',
+                              ),
+                            ),
+                            SizedBox(
+                              width: 15,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "Joseph Deo",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyLarge!
+                                      .copyWith(
+                                          fontSize: 17,
+                                          fontWeight: FontWeight.w600,
+                                          color: AppColors.primeryColor),
+                                ),
+                                SizedBox(
+                                  height: 6.h,
+                                ),
+                                Text(
+                                  "Swift (4 Seater)",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyMedium!
+                                      .copyWith(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w400,
+                                          color: AppColors.primeryColor),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                CustomPngImage(
+                                  imageName: "assets/images/wallet.png",
+                                  height: 20,
+                                  width: 20,
+                                  boxFit: BoxFit.contain,
+                                ),
+                                SizedBox(
+                                  width: 8,
+                                ),
+                                Text(
+                                  "Rs. 120.5",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyMedium!
+                                      .copyWith(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w500,
+                                          color: AppColors.primeryColor),
+                                )
+                              ],
+                            ),
+                            SizedBox(
+                              height: 8.h,
+                            ),
+                            Text(
+                              "GR-56-6788",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyMedium!
+                                  .copyWith(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w500,
+                                      color: AppColors.primeryColor),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }

@@ -50,10 +50,10 @@ class PickupScreen extends StatelessWidget {
             child: CustomSearchBar(
                 hintText: '6391 Elgin, St.Celina, Delawa..',
                 leadingIcon: CustomPngImage(
-                          imageName: "assets/images/search_icon.png",
-                          height: 25,
-                          width: 25,
-                        ),
+                  imageName: "assets/images/search_icon.png",
+                  height: 25,
+                  width: 25,
+                ),
                 trailingIcon: Icon(
                   Icons.close_rounded,
                   color: AppColors.primeryColor,
@@ -93,7 +93,7 @@ class PickupScreen extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 5.0, right: 5.0),
                   child: CustomButton(
                     onPressed: () {
-                      Get.toNamed(AppRoute.bookRide);
+                      Get.toNamed(AppRoute.savedPlaces);
                     },
                     child: Text(
                       'Confirm Location',
