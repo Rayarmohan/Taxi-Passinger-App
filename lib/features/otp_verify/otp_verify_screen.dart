@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:taxi_passenger_app/utils/color/app_colors.dart';
+import 'package:taxi_passenger_app/utils/route/route_name.dart';
 import 'package:taxi_passenger_app/widgets/custom_app_bar.dart';
 import 'package:taxi_passenger_app/widgets/custom_button.dart';
 import 'package:taxi_passenger_app/widgets/custom_images.dart';
@@ -76,7 +78,9 @@ class OTPScreen extends StatelessWidget {
             CustomButton(
               height: 44,
               width: 1.sw,
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed(AppRoute.enableLocation);
+              },
               text: "Sign In",
               color: AppColors.primeryColor,
               textColor: AppColors.white,
@@ -97,7 +101,7 @@ class OTPScreen extends StatelessWidget {
         decoration: InputDecoration(
           counterText: "", // to hide the counter text below the TextField
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(width: 2, color: Colors.grey.shade300),
+            borderSide: const BorderSide(width: 2, color: AppColors.lightGrey),
             borderRadius: BorderRadius.circular(2),
           ),
           focusedBorder: OutlineInputBorder(

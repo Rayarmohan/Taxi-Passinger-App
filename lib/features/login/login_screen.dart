@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:taxi_passenger_app/features/login/widgets/country_code_field.dart';
 import 'package:taxi_passenger_app/utils/color/app_colors.dart';
 import 'package:taxi_passenger_app/utils/route/route_name.dart';
 import 'package:taxi_passenger_app/widgets/custom_button.dart';
@@ -45,41 +46,7 @@ class LoginScreen extends StatelessWidget {
                               .textTheme
                               .bodyMedium!
                               .copyWith(height: 1.7, color: AppColors.grey)),
-                      Row(
-                        children: [
-                          Obx(
-                            () => Container(
-                              height: 48,
-                              width: 80,
-                              padding: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                  border: Border.all(
-                                      width: 1, color: AppColors.grey)),
-                              child: DropdownButtonHideUnderline(
-                                child: DropdownButton<String>(
-                                  value: controller.dropdownValue.value,
-                                  onChanged: (String? newValue) {
-                                    controller.setDropdownValue(newValue!);
-                                  },
-                                  items: <String>['+91', '+1', '+44']
-                                      .map((String value) {
-                                    return DropdownMenuItem<String>(
-                                      alignment: AlignmentDirectional.centerEnd,
-                                      value: value,
-                                      child: Text(value),
-                                    );
-                                  }).toList(),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                              child: CustomTextFieldInt(
-                            controller: controller.phoneController,
-                            hint: 'Enter phone number',
-                          )),
-                        ],
-                      ),
+                      const PhoneNumberField()
                     ],
                   ),
                   SizedBox(
@@ -96,20 +63,34 @@ class LoginScreen extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 20),
-                    child: RichText(
-                        text: TextSpan(children: [
-                      TextSpan(
-                          text: "Don’t have an account? ",
+                    child: GestureDetector(
+                      onTap: () {
+                        Get.toNamed(AppRoute.registration);
+                      },
+                      child: RichText(
+                          text: TextSpan(children: [
+                        TextSpan(
+                            text: "Don’t have an account? ",
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium!
+                                .copyWith(
+                                    decoration: TextDecoration.underline,
+                                    height: 1.7,
+                                    color: AppColors.grey)),
+                        TextSpan(
+                          text: "Sign Up",
                           style: Theme.of(context)
                               .textTheme
                               .bodyMedium!
-                              .copyWith(height: 1.7, color: AppColors.grey)),
-                      TextSpan(
-                        text: "Sign Up",
-                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            height: 1.7, color: AppColors.primeryColor),
-                      ),
-                    ])),
+                              .copyWith(
+                                  decorationColor: AppColors.primeryColor,
+                                  decoration: TextDecoration.underline,
+                                  height: 1.7,
+                                  color: AppColors.primeryColor),
+                        ),
+                      ])),
+                    ),
                   )
                 ],
               ),
